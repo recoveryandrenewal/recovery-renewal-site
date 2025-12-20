@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recovery & Renewal | Privacy-First Recovery</title>
     <meta name="description" content="A free, privacy-first recovery companion app. Zero data collection. No tracking. Built by a veteran.">
+    <!-- Explicit Robots Tag for Faster Indexing -->
+    <meta name="robots" content="index, follow">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -16,7 +18,6 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
         /* --- THEME COLORS --- 
-           Based on HomeScreen.jsx & App Screenshot
            Cosmic Deep: #121024, #2A1832, #151525
            Accent Cyan: #00E5FF
            Accent Pink: #EC4899
@@ -30,8 +31,6 @@
         }
 
         /* --- ANIMATIONS --- */
-
-        /* 1. Breathing Gradient Background */
         .breathing-bg {
             position: fixed;
             top: 0;
@@ -50,7 +49,6 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* 2. Floating Particles */
         .particles-container {
             position: fixed;
             top: 0;
@@ -74,14 +72,12 @@
             100% { transform: translateY(0px); opacity: 0.3; }
         }
 
-        /* Particle positions mapped to resemble the React Native subtle effect */
         .p1 { width: 4px; height: 4px; top: 20%; left: 10%; animation-duration: 6s; }
         .p2 { width: 3px; height: 3px; top: 60%; left: 80%; background: rgba(168, 85, 247, 0.5); animation-duration: 7s; }
         .p3 { width: 5px; height: 5px; top: 40%; left: 70%; background: rgba(236, 72, 153, 0.4); animation-duration: 8s; }
         .p4 { width: 3px; height: 3px; top: 80%; left: 20%; animation-duration: 6.5s; }
         .p5 { width: 4px; height: 4px; top: 30%; left: 50%; background: rgba(217, 70, 239, 0.5); animation-duration: 7.5s; }
 
-        /* --- GLASSMORPHISM --- */
         .glass-panel {
             background: rgba(42, 24, 50, 0.6);
             backdrop-filter: blur(12px);
@@ -95,7 +91,6 @@
             backdrop-filter: blur(5px);
         }
         
-        /* Phone Screen specific styles to match React Native */
         .app-gradient {
             background: linear-gradient(180deg, #121024 0%, #2A1832 100%);
         }
@@ -105,19 +100,13 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.4);
         }
 
-        /* --- TYPOGRAPHY HIGHLIGHTS --- */
         .text-cyan { color: #00E5FF; }
         .text-pink { color: #EC4899; }
         .border-cyan { border-color: #00E5FF; }
-        
-        /* --- UTILS --- */
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
 
-    <!-- Background Elements -->
     <div class="breathing-bg"></div>
     <div class="particles-container">
         <div class="particle p1"></div>
@@ -127,7 +116,6 @@
         <div class="particle p5"></div>
     </div>
 
-    <!-- Navigation -->
     <nav class="w-full py-6 z-10">
         <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
             <div class="flex items-center gap-3">
@@ -142,12 +130,9 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <main class="flex-grow flex flex-col items-center justify-center relative z-10 px-4 pt-10 pb-20">
-        
         <div class="max-w-7xl w-full grid lg:grid-cols-2 gap-16 items-center">
             
-            <!-- Left Column: Copy -->
             <div class="text-center lg:text-left space-y-8">
                 <h1 class="text-5xl md:text-6xl font-bold leading-tight">
                     Recovery <span class="text-cyan">&</span> <br>
@@ -161,9 +146,7 @@
                     <span class="text-cyan">100% Free.</span>
                 </p>
 
-                <!-- Store Buttons -->
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-                    <!-- Google Play -->
                     <button disabled class="cursor-not-allowed opacity-80 flex items-center justify-center gap-3 px-6 py-4 bg-gradient-to-r from-cyan-900/40 to-blue-900/40 border border-cyan/30 rounded-xl text-white font-medium transition-all hover:border-cyan/60 group">
                         <i data-lucide="play" class="w-5 h-5 fill-current text-cyan group-hover:scale-110 transition-transform"></i>
                         <div class="text-left leading-none">
@@ -172,7 +155,6 @@
                         </div>
                     </button>
 
-                    <!-- App Store -->
                     <button disabled class="cursor-not-allowed opacity-80 flex items-center justify-center gap-3 px-6 py-4 bg-white/5 border border-white/10 rounded-xl text-gray-300 font-medium transition-all hover:border-white/20 group">
                         <i data-lucide="apple" class="w-5 h-5 fill-current text-white group-hover:scale-110 transition-transform"></i>
                         <div class="text-left leading-none">
@@ -193,43 +175,32 @@
                 </p>
             </div>
 
-            <!-- Right Column: Phone Mockup (CSS-Only, matching HomeScreen.jsx & Screenshot) -->
             <div class="relative flex justify-center lg:justify-end">
-                <!-- Phone Frame -->
                 <div class="relative w-[300px] h-[600px] bg-[#0F0F1B] rounded-[3rem] border-8 border-gray-800 shadow-2xl overflow-hidden ring-1 ring-white/10">
-                    
-                    <!-- Dynamic Island / Notch area (Generic) -->
                     <div class="absolute top-0 w-full h-8 bg-black/50 z-20 flex justify-center">
                         <div class="w-24 h-5 bg-black rounded-b-xl"></div>
                     </div>
 
-                    <!-- App Content (Simulating Main.png) -->
                     <div class="w-full h-full flex flex-col pt-12 px-4 pb-6 relative app-gradient">
-                        
-                        <!-- Greeting Block -->
                         <div class="text-center mb-6">
                             <h3 class="text-white text-xl font-medium tracking-wide">Good evening, Bill</h3>
                         </div>
 
-                        <!-- Counter Block (Matches Screenshot Layout) -->
                         <div class="text-center mb-8">
                             <div class="text-3xl font-light text-white">45 days sober</div>
                             <div class="w-12 h-0.5 bg-[#00E5FF] mx-auto my-4 rounded-full"></div>
                             <div class="text-xs text-[#A0A0B0] font-normal">1 month, 15 days — since Nov 04, 2025</div>
                         </div>
 
-                        <!-- Card 1: Today's Devotional -->
                         <div class="w-full bg-[#3E1E45]/40 rounded-2xl p-4 border border-white/5 mb-4 shadow-lg backdrop-blur-sm">
                             <div class="flex items-center gap-2 mb-3">
                                 <i data-lucide="sun" class="w-4 h-4 text-[#00E5FF]"></i>
                                 <span class="text-[10px] text-[#00E5FF] uppercase tracking-wider font-bold">Today's Devotional</span>
                             </div>
-                            <!-- Mocking text lines to look like the app -->
                             <div class="h-4 w-3/4 bg-white/10 rounded mb-2"></div>
                             <div class="h-3 w-1/2 bg-white/5 rounded"></div>
                         </div>
 
-                        <!-- Card 2: Daily Wisdom -->
                         <div class="w-full bg-[#151525]/60 rounded-2xl p-4 border border-white/5 mb-4 backdrop-blur-sm">
                             <div class="flex items-center gap-2 mb-3">
                                 <i data-lucide="sparkles" class="w-4 h-4 text-[#EC4899]"></i>
@@ -238,7 +209,6 @@
                              <div class="h-4 w-2/3 bg-white/10 rounded"></div>
                         </div>
 
-                        <!-- Bottom Nav Bar (Floating Pill) -->
                         <div class="absolute bottom-8 left-4 right-4 h-[70px] nav-pill rounded-[35px] border border-white/5 flex items-center justify-between px-6 z-10">
                             <div class="flex flex-col items-center justify-center gap-1 h-full pt-2">
                                 <i data-lucide="home" class="w-6 h-6 text-[#00E5FF]"></i>
@@ -257,20 +227,15 @@
                                 <span class="text-[10px] text-[#8b9dc3] font-medium">Settings</span>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- The Manifesto (From Duaa-Screen.jsx) -->
         <div id="manifesto" class="w-full max-w-3xl mt-24 glass-panel rounded-2xl p-8 md:p-12 text-center relative overflow-hidden">
-            <!-- Decorative borders -->
             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#EC4899] to-transparent opacity-50"></div>
-            
             <h2 class="text-2xl md:text-3xl font-bold mb-2">This app collects <span class="text-pink">NOTHING.</span></h2>
             <p class="text-lg text-gray-300 mb-6">No data. No metadata. No tracking.</p>
-            
             <div class="space-y-4 text-gray-400 leading-relaxed max-w-2xl mx-auto">
                 <p>Everything stays on <span class="text-cyan font-bold">YOUR device.</span></p>
                 <p>What you see here, what you read here, stays here. All content is local and free.</p>
@@ -282,7 +247,6 @@
 
     </main>
 
-    <!-- Footer -->
     <footer class="w-full border-t border-white/10 bg-[#0F0F1B]/80 backdrop-blur-md py-8 mt-auto">
         <div class="max-w-6xl mx-auto px-6 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
             
@@ -291,24 +255,23 @@
                 <p class="mt-1">Contact: <a href="mailto:recoveryandrenewal@protonmail.com" class="text-cyan hover:underline">recoveryandrenewal@protonmail.com</a></p>
             </div>
 
-            <div class="flex items-center gap-6 text-sm flex-wrap justify-center md:justify-start">
-                <a href="/privacy.html" class="text-cyan hover:text-white transition-colors">Privacy Policy</a>
+            <div class="flex items-center gap-4 text-sm flex-wrap justify-center md:justify-start">
+                <a href="/privacy.html" class="text-cyan hover:text-white transition-colors">Privacy</a>
                 <span class="text-gray-700">•</span>
                 <a href="/about.html" class="text-cyan hover:text-white transition-colors">About</a>
                 <span class="text-gray-700">•</span>
                 <a href="/credits.html" class="text-cyan hover:text-white transition-colors">Credits</a>
                 <span class="text-gray-700">•</span>
-                <a href="/community.html" class="text-cyan hover:text-white transition-colors">Special Thanks</a>
+                <a href="/community.html" class="text-cyan hover:text-white transition-colors">Thanks</a>
                 <span class="text-gray-700">•</span>
                 <a href="https://ko-fi.com/recoveryandrenewal" target="_blank" class="text-cyan hover:text-white transition-colors flex items-center gap-2">
-                    <i data-lucide="coffee" class="w-4 h-4"></i> Support (Ko-fi)
+                    <i data-lucide="coffee" class="w-4 h-4"></i> Support
                 </a>
             </div>
         </div>
     </footer>
 
     <script>
-        // Initialize Icons
         lucide.createIcons();
     </script>
 </body>
