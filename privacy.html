@@ -3,336 +3,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO & Metadata -->
-    <title>Privacy Policy - Recovery & Renewal</title>
+    <title>Privacy Policy | Recovery & Renewal</title>
     <meta name="description" content="Privacy Policy for Recovery & Renewal. Zero data collection. No tracking. Free and open source recovery tools.">
-    <meta name="author" content="Recovery & Renewal">
     
-    <!-- Open Graph / Social Media Previews (Makes links look good on Discord/Twitter/iMessage) -->
-    <meta property="og:title" content="Privacy Policy - Recovery & Renewal">
-    <meta property="og:description" content="We don't collect your data. We don't track your behavior. Period.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://recoveryandrenewal.org/privacy">
-    <!-- <meta property="og:image" content="https://recoveryandrenewal.org/path-to-your-logo.png"> -->
-
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
     <style>
-        /* Modern CSS Reset */
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        /* Custom Scrollbar (Chrome/Safari/Edge) */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #1a0b2e;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #2a1832;
-            border: 1px solid #00e5ff;
-            border-radius: 5px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #00e5ff;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
-        /* Text Selection Styling */
-        ::selection {
-            background: #00e5ff;
-            color: #1a0b2e;
-        }
-        
+        /* --- THEME COLORS --- */
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: linear-gradient(135deg, #1a0b2e 0%, #2a1832 100%);
-            color: #e0e0e0;
-            line-height: 1.7;
-            padding: 40px 20px;
-            min-height: 100vh;
-            /* Flexbox ensures footer/back link stays bottom if content is short */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 800px;
-            background: rgba(42, 24, 50, 0.75); /* Slightly increased opacity for readability */
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 8px 32px rgba(0, 229, 255, 0.15);
-            backdrop-filter: blur(10px); /* Glassmorphism effect */
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            animation: fadeIn 0.8s ease-out;
+            font-family: 'Inter', sans-serif;
+            background-color: #121024;
+            color: #ffffff;
+            overflow-x: hidden;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        h1 {
-            color: #00e5ff;
-            font-size: 42px;
-            margin-bottom: 10px;
-            text-align: center;
-            text-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
-        }
-        
-        .effective-date {
-            text-align: center;
-            color: #b0b0b0;
-            font-size: 14px;
-            margin-bottom: 30px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 20px;
-        }
-        
-        .verse {
-            background: rgba(0, 229, 255, 0.05);
-            border-left: 4px solid #00e5ff;
-            padding: 20px;
-            margin: 30px 0;
-            font-style: italic;
-            color: #00e5ff;
-            font-size: 18px;
-            line-height: 1.6;
-            border-radius: 0 8px 8px 0;
-        }
-        
-        .verse-reference {
-            display: block;
-            text-align: right;
-            margin-top: 10px;
-            font-size: 16px;
-            color: #ff6ec7;
-            font-weight: 600;
-        }
-        
-        h2 {
-            color: #ff6ec7;
-            font-size: 28px;
-            margin-top: 40px;
-            margin-bottom: 15px;
-            border-bottom: 1px solid rgba(255, 110, 199, 0.2);
-            padding-bottom: 8px;
-            display: inline-block;
-        }
-        
-        h3 {
-            color: #00e5ff;
-            font-size: 20px;
-            margin-top: 30px;
-            margin-bottom: 10px;
-        }
-        
-        p {
-            margin-bottom: 15px;
-            font-size: 16px;
-            color: #d1d1d1;
-        }
-        
-        ul {
-            margin: 15px 0 15px 10px;
-            list-style: none; /* Removing default bullets to add custom ones */
-        }
-        
-        li {
-            margin-bottom: 10px;
-            font-size: 16px;
-            padding-left: 25px;
-            position: relative;
-        }
-
-        /* Custom Bullet Points */
-        li::before {
-            content: "•";
-            color: #00e5ff;
-            font-weight: bold;
-            font-size: 24px;
-            position: absolute;
+        /* --- ANIMATIONS --- */
+        .breathing-bg {
+            position: fixed;
+            top: 0;
             left: 0;
-            top: -5px;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: linear-gradient(135deg, #121024, #2A1832, #151525, #3E1E45);
+            background-size: 400% 400%;
+            animation: gradientPulse 15s ease infinite;
         }
-        
-        a {
-            color: #00e5ff;
-            text-decoration: none;
+
+        @keyframes gradientPulse {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            animation: floatParticle 6s ease-in-out infinite;
+        }
+
+        @keyframes floatParticle {
+            0% { transform: translateY(0px); opacity: 0.3; }
+            50% { transform: translateY(-20px); opacity: 0.6; }
+            100% { transform: translateY(0px); opacity: 0.3; }
+        }
+
+        .p1 { width: 4px; height: 4px; top: 20%; left: 10%; animation-duration: 6s; }
+        .p2 { width: 3px; height: 3px; top: 60%; left: 80%; background: rgba(168, 85, 247, 0.5); animation-duration: 7s; }
+        .p3 { width: 5px; height: 5px; top: 40%; left: 70%; background: rgba(236, 72, 153, 0.4); animation-duration: 8s; }
+        .p4 { width: 3px; height: 3px; top: 80%; left: 20%; animation-duration: 6.5s; }
+        .p5 { width: 4px; height: 4px; top: 30%; left: 50%; background: rgba(217, 70, 239, 0.5); animation-duration: 7.5s; }
+
+        /* --- GLASSMORPHISM & UTILS --- */
+        .glass-panel {
+            background: rgba(20, 20, 35, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 229, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
             transition: all 0.3s ease;
-            position: relative;
         }
         
-        a:not(.back-btn):hover {
-            color: #ff6ec7;
-            text-shadow: 0 0 8px rgba(255, 110, 199, 0.4);
+        /* Specific Red/Danger Glass for "No Data" section */
+        .glass-danger {
+            background: rgba(239, 68, 68, 0.05);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            backdrop-filter: blur(5px);
         }
+
+        .text-cyan { color: #00E5FF; }
+        .text-pink { color: #EC4899; }
+        .border-cyan { border-color: #00E5FF; }
         
         .highlight {
-            color: #00e5ff;
+            color: #00E5FF;
             font-weight: 600;
-        }
-        
-        .promise {
-            background: linear-gradient(135deg, rgba(255, 110, 199, 0.05) 0%, rgba(255, 110, 199, 0.1) 100%);
-            border: 1px solid #ff6ec7;
-            padding: 30px;
-            margin: 50px 0;
-            border-radius: 12px;
-            text-align: center;
-            font-size: 18px;
-            color: #fff;
-            box-shadow: 0 0 20px rgba(255, 110, 199, 0.1);
-        }
-        
-        .back-link {
-            text-align: center;
-            margin-top: 40px;
-            margin-bottom: 20px;
-        }
-        
-        .back-link a {
-            display: inline-block;
-            background: transparent;
-            padding: 12px 35px;
-            border-radius: 50px;
-            border: 2px solid #00e5ff;
-            font-size: 16px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            transition: all 0.3s;
-            color: #00e5ff;
-        }
-        
-        .back-link a:hover {
-            background: rgba(0, 229, 255, 0.15);
-            box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
-            transform: translateY(-2px);
-            text-decoration: none;
-            color: #fff;
-            border-color: #fff;
         }
 
-        @media (max-width: 600px) {
-            .container {
-                padding: 25px;
-            }
-            
-            h1 {
-                font-size: 32px;
-            }
-            
-            h2 {
-                font-size: 24px;
-                border-bottom: none;
-            }
-        }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h1>Privacy Policy</h1>
-        <div class="effective-date">
-            <strong>Effective Date:</strong> December 19, 2025<br>
-            <strong>Last Updated:</strong> December 19, 2025
-        </div>
+<body class="flex flex-col min-h-screen">
 
-        <div class="verse">
-            "Heal the sick, cleanse the lepers, raise the dead, cast out devils: freely ye have received, freely give."
-            <span class="verse-reference">— Matthew 10:8 (KJV)</span>
-        </div>
-
-        <h2>Our Privacy Commitment</h2>
-        <p>Recovery & Renewal is built on a simple principle: <span class="highlight">your recovery journey is yours alone</span>. We don't collect your data. We don't track your behavior. We don't monetize your information. Period.</p>
-        
-        <p><strong>This app will always be free.</strong> No paywalls. No subscriptions. No "premium" features. No ads. Every reading, prayer, and tool is accessible to everyone, forever.</p>
-
-        <h2>About the Developer</h2>
-        <p>Recovery & Renewal is created and maintained by one person—a recovering individual who built this app to give back to the community that saved his life. This app has <span class="highlight">no corporate backing, no venture capital, no organizational affiliations</span>. It's a labor of love, released as open-source software so anyone can verify its integrity and contribute to its mission.</p>
-
-        <h2>What We DON'T Collect</h2>
-        <p>Recovery & Renewal collects <span class="highlight">absolutely nothing</span>:</p>
-        <ul>
-            <li>❌ No user accounts or registration</li>
-            <li>❌ No email addresses or phone numbers</li>
-            <li>❌ No location tracking or GPS data</li>
-            <li>❌ No analytics or usage statistics</li>
-            <li>❌ No crash reports or diagnostic data</li>
-            <li>❌ No advertising IDs or device fingerprints</li>
-            <li>❌ No cookies, pixels, or trackers</li>
-            <li>❌ No third-party SDKs or data brokers</li>
-            <li>❌ No update checks or server pings</li>
-            <li>❌ No background processes or network calls</li>
-        </ul>
-        <p style="margin-top: 15px; font-style: italic;">If you're using Recovery & Renewal, we genuinely have no idea. That's by design.</p>
-
-        <h2>How Your Data Stays Private</h2>
-        
-        <h3>Everything lives on your device:</h3>
-        <ul>
-            <li>All readings, prayers, and step work are stored locally using your device's secure storage</li>
-            <li>Your personal milestones, sobriety date, and journal entries never leave your phone</li>
-            <li>Bookmarks, progress tracking, and preferences are private to you</li>
-            <li>No cloud sync, no backups to our servers, no data transmission</li>
-        </ul>
-
-        <h3>Offline-first architecture:</h3>
-        <ul>
-            <li>The entire app works without an internet connection</li>
-            <li>31,103 Bible verses, 2,400+ devotional readings, prayers, and recovery materials are pre-loaded</li>
-            <li>Nothing requires network access to function</li>
-        </ul>
-
-        <h3>Open-source transparency:</h3>
-        <ul>
-            <!-- Added rel="noopener noreferrer" for security and performance on external links -->
-            <li>Our complete source code is available on GitHub at <a href="https://github.com/recoveryandrenewal" target="_blank" rel="noopener noreferrer">github.com/recoveryandrenewal</a></li>
-            <li>Anyone can audit our code to verify zero data collection</li>
-            <li>Licensed under MIT License for maximum freedom and trust</li>
-        </ul>
-
-        <h2>External Resources</h2>
-        <p>The app includes links to external recovery resources like Alcoholics Anonymous (AA.org), Narcotics Anonymous (NA.org), and SMART Recovery. <span class="highlight">These organizations have their own privacy policies</span>, which apply when you visit their websites. We provide these links for your convenience—clicking them is always your choice.</p>
-
-        <h2>What Happens When You Delete the App</h2>
-        <p>When you uninstall Recovery & Renewal, <span class="highlight">all your local data is deleted with it</span>. We don't have backups, copies, or records—because we never collected anything in the first place.</p>
-
-        <h2>Children's Privacy</h2>
-        <p>Recovery & Renewal does not knowingly collect data from anyone, including children under 13. Since we collect no data at all, no age verification is required.</p>
-
-        <h2>Changes to This Policy</h2>
-        <p>If we ever change our privacy practices, we'll update this page with a new "Last Updated" date. However, our core commitments will <strong>never</strong> change:</p>
-        <ul>
-            <li>Zero data collection</li>
-            <li>Always free and ad-free</li>
-            <li>No paywalls or subscriptions</li>
-            <li>Open-source transparency</li>
-        </ul>
-
-        <h2>Legal Basis (GDPR/CCPA Compliance)</h2>
-        <p>We don't collect personal data, so data protection laws like GDPR and CCPA don't apply to our app's operation. You have nothing to request, delete, or opt out of—because there's nothing to request, delete, or opt out of.</p>
-
-        <h2>Contact Us</h2>
-        <p>If you have questions about this privacy policy or Recovery & Renewal:</p>
-        <p>
-            <strong>Email:</strong> <a href="mailto:recoveryandrenewal@protonmail.com">recoveryandrenewal@protonmail.com</a><br>
-            <strong>Website:</strong> <a href="https://recoveryandrenewal.org" target="_blank" rel="noopener noreferrer">recoveryandrenewal.org</a><br>
-            <strong>GitHub:</strong> <a href="https://github.com/recoveryandrenewal" target="_blank" rel="noopener noreferrer">github.com/recoveryandrenewal</a>
-        </p>
-
-        <div class="promise">
-            <p style="font-size: 22px; margin-bottom: 15px;"><strong>Our Promise</strong></p>
-            <p>Recovery is hard enough without worrying about who's watching. Recovery & Renewal exists to support your journey with zero judgment and zero surveillance. You deserve privacy. You deserve dignity. You deserve tools that serve you—not advertisers, not data brokers, not us.</p>
-            <p style="margin-top: 25px; font-size: 20px; color: #00e5ff; font-weight: bold; letter-spacing: 1px;">Freely you have received, freely give.</p>
-        </div>
-
-        <div class="back-link">
-            <a href="/" class="back-btn">← Back to Home</a>
-        </div>
+    <!-- Background -->
+    <div class="breathing-bg"></div>
+    <div class="particles-container">
+        <div class="particle p1"></div>
+        <div class="particle p2"></div>
+        <div class="particle p3"></div>
+        <div class="particle p4"></div>
+        <div class="particle p5"></div>
     </div>
+
+    <!-- Navigation -->
+    <nav class="w-full py-6 z-10">
+        <div class="max-w-4xl mx-auto px-6 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                <i data-lucide="heart" class="text-pink w-6 h-6 fill-pink/20"></i>
+                <span class="font-bold text-xl tracking-tight text-white">R&R</span>
+            </a>
+            <a href="/" class="flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-cyan transition-colors">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Home
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow px-4 pb-20 pt-8 relative z-10">
+        <div class="max-w-3xl mx-auto">
+
+            <!-- Header Block -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Privacy Policy</h1>
+                <p class="text-gray-400 text-sm">
+                    Effective Date: <span class="text-cyan">December 19, 2025</span>
+                </p>
+            </div>
+
+            <!-- The Scripture Anchor -->
+            <div class="glass-card border-l-4 border-l-cyan-400 rounded-r-xl p-6 mb-12 relative overflow-hidden">
+                <div class="absolute inset-0 bg-cyan-500/5 z-0"></div>
+                <p class="text-xl md:text-2xl text-cyan italic font-light relative z-10 leading-relaxed">
+                    "Heal the sick, cleanse the lepers, raise the dead, cast out devils: freely ye have received, freely give."
+                </p>
+                <p class="text-pink font-bold mt-3 text-right relative z-10">— Matthew 10:8 (KJV)</p>
+            </div>
+
+            <!-- Core Content -->
+            <div class="glass-panel rounded-3xl p-8 md:p-12 space-y-12">
+                
+                <!-- Commitment -->
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
+                        <i data-lucide="shield-check" class="text-pink"></i> Our Commitment
+                    </h2>
+                    <p class="text-gray-300 leading-relaxed">
+                        Recovery & Renewal is built on a simple principle: <span class="highlight">your recovery journey is yours alone</span>. We don't collect your data. We don't track your behavior. We don't monetize your information. Period.
+                    </p>
+                    <p class="text-gray-300 mt-4 font-medium">
+                        This app will always be free. No paywalls. No subscriptions. No "premium" features. No ads.
+                    </p>
+                </section>
+
+                <!-- What We DON'T Collect -->
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-6">What We <span class="text-red-400">DON'T</span> Collect</h2>
+                    <div class="glass-danger rounded-xl p-6">
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3 text-gray-300">
+                                <i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0 mt-1"></i>
+                                <span>No user accounts or registration</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-300">
+                                <i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0 mt-1"></i>
+                                <span>No email addresses or phone numbers</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-300">
+                                <i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0 mt-1"></i>
+                                <span>No location tracking or GPS data</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-300">
+                                <i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0 mt-1"></i>
+                                <span>No analytics or usage statistics</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-300">
+                                <i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0 mt-1"></i>
+                                <span>No third-party SDKs, trackers, or data brokers</span>
+                            </li>
+                        </ul>
+                        <p class="mt-6 text-sm text-gray-400 italic text-center border-t border-red-500/20 pt-4">
+                            "If you're using Recovery & Renewal, we genuinely have no idea. That's by design."
+                        </p>
+                    </div>
+                </section>
+
+                <!-- How it works -->
+                <section class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-lg font-bold text-cyan mb-3">On Your Device</h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            All readings, prayers, milestone dates, and step work are stored locally using your device's secure storage. Nothing leaves your phone.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-cyan mb-3">Offline First</h3>
+                        <p class="text-sm text-gray-300 leading-relaxed">
+                            The entire app works without an internet connection. 31,103 Bible verses and 2,400+ devotionals are pre-loaded.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Transparency -->
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">Open Source Transparency</h2>
+                    <p class="text-gray-300 mb-4">
+                        You don't have to take our word for it. Our complete source code is available on GitHub. Anyone can audit our code to verify zero data collection.
+                    </p>
+                    <a href="https://github.com/recoveryandrenewal" target="_blank" class="inline-flex items-center gap-2 text-cyan hover:text-white transition-colors">
+                        <i data-lucide="github" class="w-4 h-4"></i>
+                        View Source Code
+                    </a>
+                </section>
+                
+                <!-- Legal / Deletion -->
+                <section class="border-t border-white/10 pt-8">
+                    <h3 class="font-bold text-white mb-2">Deleting Your Data</h3>
+                    <p class="text-gray-400 text-sm mb-6">
+                        When you uninstall Recovery & Renewal, <span class="text-white">all your local data is deleted with it</span>. We don't have backups, copies, or records—because we never collected anything in the first place.
+                    </p>
+
+                    <h3 class="font-bold text-white mb-2">GDPR / CCPA</h3>
+                    <p class="text-gray-400 text-sm">
+                        Since we collect no personal data, data protection laws like GDPR and CCPA don't apply to our app's operation. You have nothing to request, delete, or opt out of—because there is nothing to request.
+                    </p>
+                </section>
+
+            </div>
+
+            <!-- The Promise Footer -->
+            <div class="mt-12 text-center">
+                <div class="glass-card p-8 rounded-2xl inline-block w-full">
+                    <h3 class="text-xl font-bold text-white mb-4">Our Promise</h3>
+                    <p class="text-gray-300 italic max-w-xl mx-auto">
+                        "Recovery is hard enough without worrying about who's watching. You deserve privacy. You deserve dignity. You deserve tools that serve you—not advertisers, not data brokers, not us."
+                    </p>
+                    <div class="mt-6 pt-6 border-t border-white/10">
+                        <p class="text-cyan font-bold tracking-widest text-sm uppercase">Freely you have received, freely give.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Contact -->
+            <div class="text-center mt-12 text-sm text-gray-500">
+                <p class="mb-2">Questions?</p>
+                <a href="mailto:recoveryandrenewal@protonmail.com" class="text-cyan hover:underline">recoveryandrenewal@protonmail.com</a>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 </html>
