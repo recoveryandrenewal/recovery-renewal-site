@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community & Special Thanks | Recovery & Renewal</title>
+    <meta name="description" content="Recognizing the community, mentors, and tools that made Recovery & Renewal possible.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        /* --- THEME COLORS --- */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121024;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* --- ANIMATIONS --- */
+        .breathing-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: linear-gradient(135deg, #121024, #2A1832, #151525, #3E1E45);
+            background-size: 400% 400%;
+            animation: gradientPulse 15s ease infinite;
+        }
+
+        @keyframes gradientPulse {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            animation: floatParticle 6s ease-in-out infinite;
+        }
+
+        @keyframes floatParticle {
+            0% { transform: translateY(0px); opacity: 0.3; }
+            50% { transform: translateY(-20px); opacity: 0.6; }
+            100% { transform: translateY(0px); opacity: 0.3; }
+        }
+
+        .p1 { width: 4px; height: 4px; top: 20%; left: 10%; animation-duration: 6s; }
+        .p2 { width: 3px; height: 3px; top: 60%; left: 80%; background: rgba(168, 85, 247, 0.5); animation-duration: 7s; }
+        .p3 { width: 5px; height: 5px; top: 40%; left: 70%; background: rgba(236, 72, 153, 0.4); animation-duration: 8s; }
+        .p4 { width: 3px; height: 3px; top: 80%; left: 20%; animation-duration: 6.5s; }
+        .p5 { width: 4px; height: 4px; top: 30%; left: 50%; background: rgba(217, 70, 239, 0.5); animation-duration: 7.5s; }
+
+        /* --- GLASSMORPHISM --- */
+        .glass-panel {
+            background: rgba(20, 20, 35, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 229, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(0, 229, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .text-cyan { color: #00E5FF; }
+        .text-pink { color: #EC4899; }
+        .border-cyan { border-color: #00E5FF; }
+        
+        .section-header {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #EC4899;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- Background -->
+    <div class="breathing-bg"></div>
+    <div class="particles-container">
+        <div class="particle p1"></div>
+        <div class="particle p2"></div>
+        <div class="particle p3"></div>
+        <div class="particle p4"></div>
+        <div class="particle p5"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="w-full py-6 z-10">
+        <div class="max-w-4xl mx-auto px-6 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                <i data-lucide="heart" class="text-pink w-6 h-6 fill-pink/20"></i>
+                <span class="font-bold text-xl tracking-tight text-white">R&R</span>
+            </a>
+            <a href="/" class="flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-cyan transition-colors">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Home
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow px-4 pb-20 pt-8 relative z-10">
+        <div class="max-w-4xl mx-auto">
+
+            <div class="text-center mb-16 space-y-4">
+                <h1 class="text-4xl md:text-5xl font-bold">Community & Thanks</h1>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto font-light">
+                    No one recovers alone. This project exists because of the guidance, faith, and support of these individuals and organizations.
+                </p>
+            </div>
+
+            <!-- Special Thanks Grid -->
+            <div class="grid md:grid-cols-2 gap-8 mb-16">
+                
+                <!-- Unity Bible Church -->
+                <div class="glass-panel rounded-2xl p-8 transform hover:-translate-y-1 transition-transform duration-300">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="bg-blue-500/20 p-3 rounded-full text-blue-400">
+                            <i data-lucide="church" class="w-6 h-6"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold">Unity Bible Church</h2>
+                    </div>
+                    <div class="space-y-4 text-gray-300">
+                        <p>Special thanks to <strong>Pastor Bill Walker</strong> and <strong>Michael Hansen</strong> for their spiritual guidance and unwavering support.</p>
+                        <p>To everyone at Unity Bible Church in Lewiston, Maine: thank you for being a family.</p>
+                    </div>
+                    <div class="mt-6 flex flex-wrap gap-4 text-sm">
+                        <a href="https://unitybible.com" target="_blank" class="flex items-center gap-2 text-cyan hover:text-white transition-colors">
+                            <i data-lucide="globe" class="w-4 h-4"></i> UnityBible.com
+                        </a>
+                        <a href="https://youtube.com/@UnityBibleChurchLewistonME" target="_blank" class="flex items-center gap-2 text-red-400 hover:text-white transition-colors">
+                            <i data-lucide="youtube" class="w-4 h-4"></i> YouTube Channel
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Recovery Connections & Shelter -->
+                <div class="glass-panel rounded-2xl p-8 transform hover:-translate-y-1 transition-transform duration-300">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="bg-green-500/20 p-3 rounded-full text-green-400">
+                            <i data-lucide="users" class="w-6 h-6"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold">Recovery & Shelter</h2>
+                    </div>
+                    <div class="space-y-4 text-gray-300">
+                        <p><strong>Recovery Connections of Maine:</strong> <br> Deep gratitude to Jeremy Hiltz and Michael Conners for their work in the community.</p>
+                        <p><strong>The Shelter:</strong> <br> To Eric and Pete — thank you for walking this road with me.</p>
+                    </div>
+                    <div class="mt-6 text-sm">
+                        <a href="https://recoveryconnectionsme.com" target="_blank" class="flex items-center gap-2 text-cyan hover:text-white transition-colors">
+                            <i data-lucide="globe" class="w-4 h-4"></i> recoveryconnectionsme.com
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- AI Collaborators -->
+            <div class="glass-card p-8 rounded-2xl mb-16 border-t-4 border-t-purple-500">
+                <div class="section-header">
+                    <i data-lucide="sparkles" class="w-5 h-5 inline-block mr-2"></i> Built with AI
+                </div>
+                <p class="text-gray-300 mb-6">
+                    As a solo developer with limited resources, I relied heavily on artificial intelligence to help write code, debug errors, and structure this project. This app is a testament to how these tools can empower individuals to build things that matter.
+                </p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <a href="https://perplexity.ai" target="_blank" class="glass-card p-4 rounded-xl hover:bg-white/10 transition-colors group">
+                        <span class="block font-bold text-white group-hover:text-cyan transition-colors">Perplexity</span>
+                        <span class="text-xs text-gray-500">Research & Knowledge</span>
+                    </a>
+                    <a href="https://claude.ai" target="_blank" class="glass-card p-4 rounded-xl hover:bg-white/10 transition-colors group">
+                        <span class="block font-bold text-white group-hover:text-cyan transition-colors">Claude</span>
+                        <span class="text-xs text-gray-500">Coding Assistance</span>
+                    </a>
+                    <a href="https://gemini.google.com" target="_blank" class="glass-card p-4 rounded-xl hover:bg-white/10 transition-colors group">
+                        <span class="block font-bold text-white group-hover:text-cyan transition-colors">Gemini Pro</span>
+                        <span class="text-xs text-gray-500">Logic & Analysis</span>
+                    </a>
+                    <a href="https://grok.x.ai" target="_blank" class="glass-card p-4 rounded-xl hover:bg-white/10 transition-colors group">
+                        <span class="block font-bold text-white group-hover:text-cyan transition-colors">Grok</span>
+                        <span class="text-xs text-gray-500">Creative Input</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Footer Message -->
+            <div class="text-center text-gray-400 italic">
+                <p>"Iron sharpeneth iron; so a man sharpeneth the countenance of his friend." — Proverbs 27:17</p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full border-t border-white/10 bg-[#0F0F1B]/80 backdrop-blur-md py-8 mt-auto">
+        <div class="max-w-4xl mx-auto px-6 text-center text-sm text-gray-500">
+            <p>&copy; 2025 Recovery & Renewal.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
