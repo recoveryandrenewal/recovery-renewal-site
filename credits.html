@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credits & Sources | Recovery & Renewal</title>
+    <meta name="description" content="Sources, licenses, and attributions for Recovery & Renewal. A transparent look at our open-source foundation.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        /* --- THEME COLORS --- */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121024;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* --- ANIMATIONS --- */
+        .breathing-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: linear-gradient(135deg, #121024, #2A1832, #151525, #3E1E45);
+            background-size: 400% 400%;
+            animation: gradientPulse 15s ease infinite;
+        }
+
+        @keyframes gradientPulse {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            animation: floatParticle 6s ease-in-out infinite;
+        }
+
+        @keyframes floatParticle {
+            0% { transform: translateY(0px); opacity: 0.3; }
+            50% { transform: translateY(-20px); opacity: 0.6; }
+            100% { transform: translateY(0px); opacity: 0.3; }
+        }
+
+        .p1 { width: 4px; height: 4px; top: 20%; left: 10%; animation-duration: 6s; }
+        .p2 { width: 3px; height: 3px; top: 60%; left: 80%; background: rgba(168, 85, 247, 0.5); animation-duration: 7s; }
+        .p3 { width: 5px; height: 5px; top: 40%; left: 70%; background: rgba(236, 72, 153, 0.4); animation-duration: 8s; }
+        .p4 { width: 3px; height: 3px; top: 80%; left: 20%; animation-duration: 6.5s; }
+        .p5 { width: 4px; height: 4px; top: 30%; left: 50%; background: rgba(217, 70, 239, 0.5); animation-duration: 7.5s; }
+
+        /* --- GLASSMORPHISM --- */
+        .glass-panel {
+            background: rgba(20, 20, 35, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 229, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(0, 229, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .text-cyan { color: #00E5FF; }
+        .text-pink { color: #EC4899; }
+        .border-cyan { border-color: #00E5FF; }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #00E5FF;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- Background -->
+    <div class="breathing-bg"></div>
+    <div class="particles-container">
+        <div class="particle p1"></div>
+        <div class="particle p2"></div>
+        <div class="particle p3"></div>
+        <div class="particle p4"></div>
+        <div class="particle p5"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="w-full py-6 z-10">
+        <div class="max-w-4xl mx-auto px-6 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                <i data-lucide="heart" class="text-pink w-6 h-6 fill-pink/20"></i>
+                <span class="font-bold text-xl tracking-tight text-white">R&R</span>
+            </a>
+            <a href="/" class="flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-cyan transition-colors">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Home
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow px-4 pb-20 pt-8 relative z-10">
+        <div class="max-w-4xl mx-auto">
+
+            <!-- Header -->
+            <div class="text-center mb-16 space-y-4">
+                <h1 class="text-4xl md:text-5xl font-bold">The Library</h1>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto font-light">
+                    Recovery & Renewal is built on the foundation of open wisdom. We gratefully acknowledge the sources that make this free tool possible.
+                </p>
+            </div>
+
+            <!-- Section A: The Ancient Wisdom (Public Domain) -->
+            <section class="mb-16">
+                <div class="section-title">
+                    <i data-lucide="scroll-text" class="w-5 h-5"></i> The Ancient Wisdom
+                </div>
+                <div class="grid md:grid-cols-2 gap-6">
+                    
+                    <!-- Christian Tradition -->
+                    <div class="glass-card p-6 rounded-xl">
+                        <h3 class="text-lg font-bold text-white mb-1">King James Bible</h3>
+                        <p class="text-sm text-gray-400 mb-4">Original 1611 / 1769 Standard</p>
+                        <div class="text-xs text-gray-500 font-mono bg-black/20 p-2 rounded">
+                            Source: Public Domain (USA) <br> Data via: bible-api.com
+                        </div>
+                    </div>
+
+                    <div class="glass-card p-6 rounded-xl">
+                        <h3 class="text-lg font-bold text-white mb-1">Morning & Evening</h3>
+                        <p class="text-sm text-gray-400 mb-4">Charles Spurgeon (1866)</p>
+                        <div class="text-xs text-gray-500 font-mono bg-black/20 p-2 rounded">
+                            Source: Public Domain <br> Verified Original Text
+                        </div>
+                    </div>
+
+                    <!-- Stoic Tradition -->
+                    <div class="glass-card p-6 rounded-xl">
+                        <h3 class="text-lg font-bold text-white mb-1">Meditations & Enchiridion</h3>
+                        <p class="text-sm text-gray-400 mb-4">Marcus Aurelius & Epictetus</p>
+                        <div class="text-xs text-gray-500 font-mono bg-black/20 p-2 rounded">
+                            Trans: George Long (1862) <br> Trans: T.W. Higginson (1865)
+                        </div>
+                    </div>
+
+                    <!-- Eastern Tradition -->
+                    <div class="glass-card p-6 rounded-xl">
+                        <h3 class="text-lg font-bold text-white mb-1">Tao Te Ching & Dhammapada</h3>
+                        <p class="text-sm text-gray-400 mb-4">Lao Tzu & Buddhist Scripture</p>
+                        <div class="text-xs text-gray-500 font-mono bg-black/20 p-2 rounded">
+                            Trans: James Legge (1891) <br> Trans: F. Max Müller (1900)
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Section B: Modern Recovery (Creative Commons) -->
+            <section class="mb-16">
+                <div class="section-title">
+                    <i data-lucide="users" class="w-5 h-5"></i> Modern Recovery Community
+                </div>
+                <div class="glass-panel rounded-2xl p-8 space-y-8">
+                    
+                    <!-- Recovery Dharma -->
+                    <div class="flex flex-col md:flex-row gap-6 border-b border-white/10 pb-8 last:border-0 last:pb-0">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400">
+                                <i data-lucide="lotus" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">Recovery Dharma</h3>
+                            <p class="text-gray-300 text-sm mb-2">
+                                Buddhist-inspired recovery tools and mindfulness practices.
+                            </p>
+                            <div class="flex items-center gap-4 text-xs">
+                                <span class="bg-purple-500/10 text-purple-300 px-2 py-1 rounded">CC BY-SA 4.0</span>
+                                <a href="https://recoverydharma.org" target="_blank" class="text-cyan hover:underline">recoverydharma.org</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 12Step.org -->
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400">
+                                <i data-lucide="shield" class="w-6 h-6"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">12Step.org</h3>
+                            <p class="text-gray-300 text-sm mb-2">
+                                Daily slogans, step worksheets, and reflection questions. Created by volunteers.
+                            </p>
+                            <div class="flex items-center gap-4 text-xs">
+                                <span class="bg-blue-500/10 text-blue-300 px-2 py-1 rounded">CC BY 4.0</span>
+                                <a href="https://12step.org" target="_blank" class="text-cyan hover:underline">12step.org</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Section C: The Tech Stack -->
+            <section class="mb-16">
+                <div class="section-title">
+                    <i data-lucide="cpu" class="w-5 h-5"></i> Built With Open Source
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="glass-card p-4 rounded-lg text-center hover:bg-white/5">
+                        <span class="block font-bold text-white">React Native</span>
+                        <span class="text-xs text-gray-500">Framework</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-lg text-center hover:bg-white/5">
+                        <span class="block font-bold text-white">Expo</span>
+                        <span class="text-xs text-gray-500">Platform</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-lg text-center hover:bg-white/5">
+                        <span class="block font-bold text-white">Tailwind CSS</span>
+                        <span class="text-xs text-gray-500">Styling</span>
+                    </div>
+                    <div class="glass-card p-4 rounded-lg text-center hover:bg-white/5">
+                        <span class="block font-bold text-white">Lucide</span>
+                        <span class="text-xs text-gray-500">Icons</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section D: Legal Disclaimers -->
+            <section class="border-t border-white/10 pt-12">
+                <div class="glass-card bg-black/20 p-8 rounded-xl text-sm text-gray-400 space-y-4">
+                    <p>
+                        <strong>Independent Project:</strong> Recovery & Renewal is an independent, open-source project created by an individual developer. It is not affiliated with, endorsed by, or sponsored by any specific recovery organization.
+                    </p>
+                    <p>
+                        <strong>Trademarks:</strong> Alcoholics Anonymous®, AA®, and The Big Book® are registered trademarks of Alcoholics Anonymous World Services, Inc. Narcotics Anonymous® is a registered trademark of Narcotics Anonymous World Services, Inc. Use of these names is for informational purposes only.
+                    </p>
+                    <p>
+                        <strong>License:</strong> The source code for Recovery & Renewal is released under the <a href="https://github.com/recoveryandrenewal" class="text-cyan hover:underline">MIT License</a>.
+                    </p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full border-t border-white/10 bg-[#0F0F1B]/80 backdrop-blur-md py-8 mt-auto">
+        <div class="max-w-4xl mx-auto px-6 text-center text-sm text-gray-500">
+            <p>&copy; 2025 Recovery & Renewal.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
