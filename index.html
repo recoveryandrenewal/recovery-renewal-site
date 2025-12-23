@@ -103,6 +103,11 @@
         .text-cyan { color: #00E5FF; }
         .text-pink { color: #EC4899; }
         .border-cyan { border-color: #00E5FF; }
+        
+        /* Gold/Pioneer Specific Styles */
+        .border-gold { border-color: rgba(234, 179, 8, 0.5); }
+        .text-gold { color: #EAB308; }
+        .bg-gold-glow { background: rgba(234, 179, 8, 0.1); }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -131,6 +136,7 @@
     </nav>
 
     <main class="flex-grow flex flex-col items-center justify-center relative z-10 px-4 pt-10 pb-20">
+        
         <div class="max-w-7xl w-full grid lg:grid-cols-2 gap-16 items-center">
             
             <div class="text-center lg:text-left space-y-8">
@@ -146,6 +152,7 @@
                     <span class="text-cyan">100% Free.</span>
                 </p>
 
+                <!-- Store Buttons -->
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
                     <button disabled class="cursor-not-allowed opacity-80 flex items-center justify-center gap-3 px-6 py-4 bg-gradient-to-r from-cyan-900/40 to-blue-900/40 border border-cyan/30 rounded-xl text-white font-medium transition-all hover:border-cyan/60 group">
                         <i data-lucide="play" class="w-5 h-5 fill-current text-cyan group-hover:scale-110 transition-transform"></i>
@@ -164,7 +171,50 @@
                     </button>
                 </div>
 
-                <div class="flex justify-center lg:justify-start">
+                <!-- PIONEER / EARLY ACCESS SECTION -->
+                <div class="mt-8 relative max-w-xl mx-auto lg:mx-0">
+                    <div class="glass-card border border-gold bg-gold-glow p-6 rounded-2xl relative overflow-hidden">
+                        <div class="absolute top-0 right-0 p-2 opacity-20">
+                            <i data-lucide="rocket" class="w-16 h-16 text-gold"></i>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-white mb-2 flex items-center gap-2">
+                            <i data-lucide="star" class="w-5 h-5 text-gold fill-gold"></i>
+                            Be Part of the Launch
+                        </h3>
+                        
+                        <p class="text-gold font-bold text-sm mb-3 uppercase tracking-wide">
+                            Launch Date: Christmas Day (12/25/25)
+                        </p>
+
+                        <p class="text-gray-300 text-sm mb-4">
+                            Get your reservation now. We are looking for 20 dedicated individuals to join our <strong>Pioneer Team</strong>. Get exclusive early access to the full app, free forever, and help us clear the runway.
+                        </p>
+                        
+                        <div class="space-y-2 mb-6 text-sm text-gray-400">
+                            <div class="flex items-start gap-2">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan mt-0.5"></i>
+                                <span>Must have an Android device & Gmail address</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan mt-0.5"></i>
+                                <span>Keep the app installed for 14 days</span>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan mt-0.5"></i>
+                                <span>Help shape the future of recovery tech</span>
+                            </div>
+                        </div>
+
+                        <a href="pioneerteam.html" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-4 py-2 rounded-lg transition-colors border border-white/20 text-sm font-medium">
+    <i data-lucide="rocket" class="w-4 h-4 text-gold"></i>
+    Get Reservation
+                        </a>
+                    </div>
+                </div>
+                <!-- END PIONEER SECTION -->
+
+                <div class="flex justify-center lg:justify-start pt-4">
                     <a href="/about.html" class="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-cyan transition-colors">
                         Read the Story behind the app <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </a>
