@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join the Pioneer Team | Recovery & Renewal</title>
+    <meta name="description" content="Sign up for the Recovery & Renewal Pioneer Team. Early access testing for the privacy-first recovery app.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        /* --- THEME COLORS --- */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121024;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* --- ANIMATIONS --- */
+        .breathing-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: linear-gradient(135deg, #121024, #2A1832, #151525, #3E1E45);
+            background-size: 400% 400%;
+            animation: gradientPulse 15s ease infinite;
+        }
+
+        @keyframes gradientPulse {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .particles-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            animation: floatParticle 6s ease-in-out infinite;
+        }
+
+        @keyframes floatParticle {
+            0% { transform: translateY(0px); opacity: 0.3; }
+            50% { transform: translateY(-20px); opacity: 0.6; }
+            100% { transform: translateY(0px); opacity: 0.3; }
+        }
+
+        .p1 { width: 4px; height: 4px; top: 20%; left: 10%; animation-duration: 6s; }
+        .p2 { width: 3px; height: 3px; top: 60%; left: 80%; background: rgba(168, 85, 247, 0.5); animation-duration: 7s; }
+        .p3 { width: 5px; height: 5px; top: 40%; left: 70%; background: rgba(236, 72, 153, 0.4); animation-duration: 8s; }
+        .p4 { width: 3px; height: 3px; top: 80%; left: 20%; animation-duration: 6.5s; }
+        .p5 { width: 4px; height: 4px; top: 30%; left: 50%; background: rgba(217, 70, 239, 0.5); animation-duration: 7.5s; }
+
+        /* --- GLASSMORPHISM --- */
+        .glass-panel {
+            background: rgba(42, 24, 50, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 229, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+        }
+        
+        .text-cyan { color: #00E5FF; }
+        .text-pink { color: #EC4899; }
+        .text-gold { color: #EAB308; }
+        .border-gold { border-color: rgba(234, 179, 8, 0.5); }
+        .bg-gold-glow { background: rgba(234, 179, 8, 0.05); }
+
+        /* Form Styling */
+        .input-glass {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .input-glass:focus {
+            outline: none;
+            border-color: #EAB308;
+            box-shadow: 0 0 15px rgba(234, 179, 8, 0.2);
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <!-- Background -->
+    <div class="breathing-bg"></div>
+    <div class="particles-container">
+        <div class="particle p1"></div>
+        <div class="particle p2"></div>
+        <div class="particle p3"></div>
+        <div class="particle p4"></div>
+        <div class="particle p5"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="w-full py-6 z-10">
+        <div class="max-w-4xl mx-auto px-6 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                <i data-lucide="heart" class="text-pink w-6 h-6 fill-pink/20"></i>
+                <span class="font-bold text-xl tracking-tight text-white">R&R</span>
+            </a>
+            <a href="/" class="flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-cyan transition-colors">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Home
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow px-4 pb-20 pt-8 relative z-10 flex items-center justify-center">
+        <div class="w-full max-w-lg">
+
+            <!-- Pioneer Card -->
+            <div class="glass-panel border-gold bg-gold-glow rounded-3xl p-8 md:p-10 relative overflow-hidden shadow-2xl">
+                
+                <!-- Decorative Elements -->
+                <div class="absolute top-0 right-0 p-4 opacity-10">
+                    <i data-lucide="rocket" class="w-32 h-32 text-gold"></i>
+                </div>
+
+                <div class="text-center mb-8 relative z-10">
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-yellow-500/20 text-gold mb-4 ring-1 ring-yellow-500/50">
+                        <i data-lucide="star" class="w-8 h-8 fill-gold"></i>
+                    </div>
+                    <h1 class="text-3xl font-bold text-white">Join the <span class="text-gold">Pioneers</span></h1>
+                    <p class="text-gray-300 mt-2 text-sm">
+                        Secure your spot for the Christmas Day launch (12/25/25).
+                    </p>
+                </div>
+
+                <!-- The Form -->
+                <form id="pioneerForm" action="https://formspree.io/f/mykglrkj" method="POST" class="space-y-6 relative z-10">
+                    
+                    <!-- Hidden Subject Field for Formspree -->
+                    <input type="hidden" name="_subject" value="New Pioneer Team Reservation">
+                    
+                    <!-- Redirect after submission (Optional - defaults to Formspree thank you page) -->
+                    <!-- <input type="hidden" name="_next" value="https://recoveryandrenewal.org/thanks.html"> -->
+
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-400 mb-2">Name</label>
+                        <input type="text" name="name" id="name" required placeholder="First Name & Last Initial (e.g., Bill A.)" 
+                            class="w-full px-4 py-3 rounded-xl input-glass placeholder-gray-600 focus:placeholder-gray-500">
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-400 mb-2">Gmail Address</label>
+                        <input type="email" name="email" id="email" required placeholder="name@gmail.com" 
+                            class="w-full px-4 py-3 rounded-xl input-glass placeholder-gray-600 focus:placeholder-gray-500">
+                        <p class="text-xs text-gray-500 mt-2">Required by Google Play for testing access.</p>
+                    </div>
+
+                    <button type="submit" 
+                        class="w-full bg-gradient-to-r from-yellow-600 to-yellow-500 hover:from-yellow-500 hover:to-yellow-400 text-black font-bold py-4 rounded-xl shadow-lg shadow-yellow-500/20 transform transition-all active:scale-95 flex items-center justify-center gap-2 group">
+                        <span>Confirm Reservation</span>
+                        <i data-lucide="rocket" class="w-5 h-5 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+
+                    <p class="text-center text-xs text-gray-500 mt-4">
+                        We will email you the invite code when the launch window opens.
+                    </p>
+
+                </form>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="w-full border-t border-white/10 bg-[#0F0F1B]/80 backdrop-blur-md py-8 mt-auto">
+        <div class="max-w-4xl mx-auto px-6 text-center text-sm text-gray-500">
+            <p>&copy; 2025 Recovery & Renewal.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
