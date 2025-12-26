@@ -108,6 +108,14 @@
         .border-gold { border-color: rgba(234, 179, 8, 0.5); }
         .text-gold { color: #EAB308; }
         .bg-gold-glow { background: rgba(234, 179, 8, 0.1); }
+        
+        /* Gallery Preview Styles */
+        .screenshot-preview {
+            transition: all 0.3s ease;
+        }
+        .screenshot-preview:hover {
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -285,6 +293,46 @@
                 </div>
             </div>
         </div>
+
+        <!-- SEE IT IN ACTION GALLERY SECTION -->
+        <div class="w-full max-w-6xl mt-24">
+            <div class="glass-card border border-pink/20 p-8 md:p-12 rounded-3xl relative overflow-hidden">
+                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#EC4899] to-transparent opacity-50"></div>
+                
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4">
+                        See It In <span class="text-cyan">Action</span>
+                    </h2>
+                    <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+                        Real screenshots from the app. <span class="text-pink">Cosmic design.</span> <span class="text-cyan">Privacy-first.</span> <span class="text-white">Zero tracking.</span>
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                    <div class="screenshot-preview rounded-xl overflow-hidden border border-white/10 shadow-lg">
+                        <img src="https://raw.githubusercontent.com/recoveryandrenewal/recovery-renewal-site/main/images/homescreen.jpg" alt="Home Screen" class="w-full h-auto">
+                    </div>
+                    <div class="screenshot-preview rounded-xl overflow-hidden border border-white/10 shadow-lg">
+                        <img src="https://raw.githubusercontent.com/recoveryandrenewal/recovery-renewal-site/main/images/spurgeon.jpg" alt="Spurgeon Devotional" class="w-full h-auto">
+                    </div>
+                    <div class="screenshot-preview rounded-xl overflow-hidden border border-white/10 shadow-lg">
+                        <img src="https://raw.githubusercontent.com/recoveryandrenewal/recovery-renewal-site/main/images/stoic-reading.jpg" alt="Stoic Wisdom" class="w-full h-auto">
+                    </div>
+                    <div class="screenshot-preview rounded-xl overflow-hidden border border-white/10 shadow-lg">
+                        <img src="https://raw.githubusercontent.com/recoveryandrenewal/recovery-renewal-site/main/images/resources.jpg" alt="Crisis Resources" class="w-full h-auto">
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <a href="/gallery.html" class="inline-flex items-center gap-3 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold transition-all shadow-lg hover:shadow-2xl">
+                        <i data-lucide="images" class="w-5 h-5"></i>
+                        View Full Gallery
+                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- END GALLERY SECTION -->
 
         <div id="manifesto" class="w-full max-w-3xl mt-24 glass-panel rounded-2xl p-8 md:p-12 text-center relative overflow-hidden">
             <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#EC4899] to-transparent opacity-50"></div>
