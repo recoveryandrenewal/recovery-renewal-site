@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Gallery | Recovery & Renewal</title>
+    <meta name="description" content="See Recovery & Renewal in action - screenshots of the privacy-first recovery companion app.">
+    <meta name="robots" content="index, follow">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #121024;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .breathing-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+            background: linear-gradient(135deg, #121024, #2A1832, #151525, #3E1E45);
+            background-size: 400% 400%;
+            animation: gradientPulse 15s ease infinite;
+        }
+
+        @keyframes gradientPulse {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .glass-panel {
+            background: rgba(42, 24, 50, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 229, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .screenshot-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .screenshot-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 229, 255, 0.3);
+            box-shadow: 0 12px 40px rgba(0, 229, 255, 0.2);
+        }
+
+        .text-cyan { color: #00E5FF; }
+        .text-pink { color: #EC4899; }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90vh;
+            position: relative;
+        }
+
+        .lightbox-image {
+            max-width: 100%;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            font-size: 32px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(236, 72, 153, 0.5);
+            transform: rotate(90deg);
+        }
+
+        .lightbox-caption {
+            text-align: center;
+            margin-top: 20px;
+            color: #00E5FF;
+            font-size: 18px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+    <div class="breathing-bg"></div>
+
+    <nav class="w-full py-6 z-10">
+        <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+                <i data-lucide="heart" class="text-pink w-6 h-6 fill-pink/20"></i>
+                <span class="font-bold text-xl tracking-tight text-white">R&R</span>
+            </a>
+            <a href="/" class="text-cyan hover:text-white transition-colors text-sm flex items-center gap-2">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                Back to Home
+            </a>
+        </div>
+    </nav>
+
+    <main class="flex-grow relative z-10 px-4 py-12">
+        
+        <div class="max-w-7xl mx-auto">
+            
+            <div class="text-center mb-16">
+                <h1 class="text-5xl md:text-6xl font-bold mb-4">
+                    See It In <span class="text-cyan">Action</span>
+                </h1>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                    Real screenshots from Recovery & Renewal. <br>
+                    <span class="text-pink">Cosmic design.</span> <span class="text-cyan">Privacy-first.</span> <span class="text-white">Zero tracking.</span>
+                </p>
+            </div>
+
+            <!-- Feature Graphic / Logo Section -->
+            <div class="mb-16">
+                <div class="glass-panel rounded-3xl p-8 md:p-12 max-w-4xl mx-auto">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <img src="https://raw.githubusercontent.com/recoveryandrenewal/recovery-renewal-site/main/images/logo.jpg" alt="Recovery & Renewal Logo" class="w-full rounded-2xl shadow-2xl">
+                        </div>
+                        <div>
+                            <img src="https://raw.githubusercontent.com/recoveryandrenewal/recovery-renewal-site/main/images/feature-graphic.jpg" alt="Recovery & Renewal Feature" class="w-full rounded-2xl shadow-2xl">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Screenshots Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Home Screen -->
+                <div class="screenshot-card rounded-2xl p-4 overflow-hidden" onclick="openLightbox('homescreen', 'Home Screen - Your Daily Journey')">
+                    <img src="https://raw.githubusercontent.com/recoveryandrenewal/recovery-renewal-site/main/images/homescreen.jpg" alt="Home Screen" class="w-full h-auto rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold text-cyan mb-2">Home Screen</h3>
+                    <p class="text-sm text-gray-400">Your personalized recovery dashboard with daily devotionals and wisdom</p>
+                </div>
+
+                <!-- Milestone Setup -->
+                <div class="screenshot-card rounded-2xl p-4 overflow-hidden" onclick="openLightbox('milestone', 'Milestone Setup - Track Your Journey')">
+                    <img src="https://raw.githubusercontent.com/recoveryandrenewal/recovery-renewal-site/main/images/milestone.jpg" alt="Milestone Setup" class="w-full h-auto rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold text-cyan mb-2">Milestone Setup</h3>
+                    <p class="text-sm text-gray-400">Choose how you track your journey - sobriety date, spiritual awakening, or any meaningful start</p>
+                </div>
+
+                <!-- Spurgeon Devotional -->
+                <div class="screenshot-card rounded-2xl p-4 overflow-hidden" onclick="openLightbox('spurgeon', 'Spurgeon Devotional - Daily Reading')">
+                    <img src="https://raw.githubusercontent.com/recoveryandrenewal/recovery-renewal-site/main/images/spurgeon.jpg" alt="Spurgeon Devotional" class="w-full h-auto rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold text-cyan mb-2">Daily Devotional</h3>
+                    <p class="text-sm text-gray-400">Morning & evening readings from Spurgeon (1866) - all public domain</p>
+                </div>
+
+                <!-- Stoic Wisdom -->
+                <div class="screenshot-card rounded-2xl p-4 overflow-hidden" onclick="openLightbox('stoic', 'Stoic Wisdom - Marcus Aurelius & Epictetus')">
+                    <img src="https://raw.githubusercontent.com/recoveryandrenewal/recovery-renewal-site/main/images/stoic-reading.jpg" alt="Stoic Reading" class="w-full h-auto rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold text-cyan mb-2">Stoic Wisdom</h3>
+                    <p class="text-sm text-gray-400">Daily readings from Marcus Aurelius and Epictetus for resilience and acceptance</p>
+                </div>
+
+                <!-- Mindfulness Practice -->
+                <div class="screenshot-card rounded-2xl p-4 overflow-hidden" onclick="openLightbox('mindfulness', 'Mindfulness Practice - Recovery Dharma')">
+                    <img src="https://raw.githubusercontent.com/recoveryandrenewal/recovery-renewal-site/main/images/mindfulness.jpg" alt="Mindfulness Practice" class="w-full h-auto rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold text-cyan mb-2">Mindfulness Practice</h3>
+                    <p class="text-sm text-gray-400">Buddhist recovery wisdom - addressing craving, suffering, and freedom</p>
+                </div>
+
+                <!-- Bible Reader -->
+                <div class="screenshot-card rounded-2xl p-4 overflow-hidden" onclick="openLightbox('bible', 'Bible Reader - Entire KJV')">
+                    <img src="https://raw.githubusercontent.com/recoveryandrenewal/recovery-renewal-site/main/images/bible-reader.jpg" alt="Bible Reader" class="w-full h-auto rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold text-cyan mb-2">Bible Reader</h3>
+                    <p class="text-sm text-gray-400">Complete King James Bible (1611) - 31,103 verses, all offline</p>
+                </div>
+
+                <!-- Resources Screen -->
+                <div class="screenshot-card rounded-2xl p-4 overflow-hidden" onclick="openLightbox('resources', 'Crisis Resources - Get Help Now')">
+                    <img src="https://raw.githubusercontent.com/recoveryandrenewal/recovery-renewal-site/main/images/resources.jpg" alt="Resources Screen" class="w-full h-auto rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold text-cyan mb-2">Crisis Resources</h3>
+                    <p class="text-sm text-gray-400">988 Lifeline, SAMHSA, AA/NA finder - help is always one tap away</p>
+                </div>
+
+                <!-- Settings Screen -->
+                <div class="screenshot-card rounded-2xl p-4 overflow-hidden" onclick="openLightbox('settings', 'Settings - Customize Your Experience')">
+                    <img src="https://raw.githubusercontent.com/recoveryandrenewal/recovery-renewal-site/main/images/settings.jpg" alt="Settings Screen" class="w-full h-auto rounded-lg mb-4">
+                    <h3 class="text-lg font-semibold text-cyan mb-2">Settings</h3>
+                    <p class="text-sm text-gray-400">Toggle Christian/Buddhist/Stoic/Taoist readings - all traditions honored equally</p>
+                </div>
+
+            </div>
+
+            <!-- CTA Section -->
+            <div class="mt-20 text-center">
+                <div class="glass-panel rounded-3xl p-12 max-w-3xl mx-auto">
+                    <h2 class="text-3xl font-bold mb-4">Ready to Start Your Journey?</h2>
+                    <p class="text-gray-300 mb-8">Join the Pioneer Team and get early access to Recovery & Renewal</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="/pioneerteam.html" class="inline-flex items-center gap-2 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold transition-all">
+                            <i data-lucide="rocket" class="w-5 h-5"></i>
+                            Join Pioneer Team
+                        </a>
+                        <a href="/" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-semibold transition-all border border-white/20">
+                            <i data-lucide="arrow-left" class="w-5 h-5"></i>
+                            Back to Home
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox(event)">×</button>
+            <img id="lightbox-image" src="" alt="" class="lightbox-image">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
+    </div>
+
+    <footer class="w-full border-t border-white/10 bg-[#0F0F1B]/80 backdrop-blur-md py-8 mt-20">
+        <div class="max-w-6xl mx-auto px-6 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-sm text-gray-500">
+                <p>&copy; 2025 Recovery & Renewal.</p>
+                <p class="mt-1">Contact: <a href="mailto:recoveryandrenewal@protonmail.com" class="text-cyan hover:underline">recoveryandrenewal@protonmail.com</a></p>
+            </div>
+            <div class="flex items-center gap-4 text-sm flex-wrap justify-center md:justify-start">
+                <a href="/privacy.html" class="text-cyan hover:text-white transition-colors">Privacy</a>
+                <span class="text-gray-700">•</span>
+                <a href="/about.html" class="text-cyan hover:text-white transition-colors">About</a>
+                <span class="text-gray-700">•</span>
+                <a href="https://github.com/recoveryandrenewal" target="_blank" class="text-cyan hover:text-white transition-colors flex items-center gap-2">
+                    <i data-lucide="github" class="w-4 h-4"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Lightbox functionality
+        function openLightbox(imageName, caption) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            
+            lightboxImage.src = `https://raw.githubusercontent.com/recoveryandrenewal/recovery-renewal-site/main/images/${imageName}.jpg`;
+            lightboxImage.alt = caption;
+            lightboxCaption.textContent = caption;
+            
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox(event) {
+            if (event.target.id === 'lightbox' || event.target.classList.contains('lightbox-close')) {
+                const lightbox = document.getElementById('lightbox');
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const lightbox = document.getElementById('lightbox');
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+</body>
+</html>
