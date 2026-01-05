@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy | Recovery & Renewal</title>
-    <meta name="description" content="Privacy Policy for Recovery & Renewal. Zero data collection. No tracking. Free and open source recovery tools.">
+    <meta name="description" content="Our simple, honest privacy policy: We don't collect your data. Period.">
+    <link rel="canonical" href="https://recoveryandrenewal.org/privacy.html">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -71,42 +72,19 @@
         .p4 { width: 3px; height: 3px; top: 80%; left: 20%; animation-duration: 6.5s; }
         .p5 { width: 4px; height: 4px; top: 30%; left: 50%; background: rgba(217, 70, 239, 0.5); animation-duration: 7.5s; }
 
-        /* --- GLASSMORPHISM & UTILS --- */
         .glass-panel {
-            background: rgba(20, 20, 35, 0.7);
+            background: rgba(42, 24, 50, 0.6);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(0, 229, 255, 0.1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        }
-
-        .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(5px);
-            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
         }
         
-        /* Specific Red/Danger Glass for "No Data" section */
-        .glass-danger {
-            background: rgba(239, 68, 68, 0.05);
-            border: 1px solid rgba(239, 68, 68, 0.2);
-            backdrop-filter: blur(5px);
-        }
-
         .text-cyan { color: #00E5FF; }
         .text-pink { color: #EC4899; }
-        .border-cyan { border-color: #00E5FF; }
-        
-        .highlight {
-            color: #00E5FF;
-            font-weight: 600;
-        }
-
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
 
-    <!-- Background -->
     <div class="breathing-bg"></div>
     <div class="particles-container">
         <div class="particle p1"></div>
@@ -129,139 +107,114 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="flex-grow px-4 pb-20 pt-8 relative z-10">
-        <div class="max-w-3xl mx-auto">
-
-            <!-- Header Block -->
-            <div class="text-center mb-12">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4">Privacy Policy</h1>
-                <p class="text-gray-400 text-sm">
-                    Effective Date: <span class="text-cyan">December 19, 2025</span>
-                </p>
-            </div>
-
-            <!-- The Scripture Anchor -->
-            <div class="glass-card border-l-4 border-l-cyan-400 rounded-r-xl p-6 mb-12 relative overflow-hidden">
-                <div class="absolute inset-0 bg-cyan-500/5 z-0"></div>
-                <p class="text-xl md:text-2xl text-cyan italic font-light relative z-10 leading-relaxed">
-                    "Heal the sick, cleanse the lepers, raise the dead, cast out devils: freely ye have received, freely give."
-                </p>
-                <p class="text-pink font-bold mt-3 text-right relative z-10">— Matthew 10:8 (KJV)</p>
-            </div>
-
-            <!-- Core Content -->
-            <div class="glass-panel rounded-3xl p-8 md:p-12 space-y-12">
-                
-                <!-- Commitment -->
-                <section>
-                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-3">
-                        <i data-lucide="shield-check" class="text-pink"></i> Our Commitment
-                    </h2>
-                    <p class="text-gray-300 leading-relaxed">
-                        Recovery & Renewal is built on a simple principle: <span class="highlight">your recovery journey is yours alone</span>. We don't collect your data. We don't track your behavior. We don't monetize your information. Period.
-                    </p>
-                    <p class="text-gray-300 mt-4 font-medium">
-                        This app will always be free. No paywalls. No subscriptions. No "premium" features. No ads.
-                    </p>
-                </section>
-
-                <!-- What We DON'T Collect -->
-                <section>
-                    <h2 class="text-2xl font-bold text-white mb-6">What We <span class="text-red-400">DON'T</span> Collect</h2>
-                    <div class="glass-danger rounded-xl p-6">
-                        <ul class="space-y-3">
-                            <li class="flex items-start gap-3 text-gray-300">
-                                <i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0 mt-1"></i>
-                                <span>No user accounts or registration</span>
-                            </li>
-                            <li class="flex items-start gap-3 text-gray-300">
-                                <i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0 mt-1"></i>
-                                <span>No email addresses or phone numbers</span>
-                            </li>
-                            <li class="flex items-start gap-3 text-gray-300">
-                                <i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0 mt-1"></i>
-                                <span>No location tracking or GPS data</span>
-                            </li>
-                            <li class="flex items-start gap-3 text-gray-300">
-                                <i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0 mt-1"></i>
-                                <span>No analytics or usage statistics</span>
-                            </li>
-                            <li class="flex items-start gap-3 text-gray-300">
-                                <i data-lucide="x-circle" class="w-5 h-5 text-red-400 flex-shrink-0 mt-1"></i>
-                                <span>No third-party SDKs, trackers, or data brokers</span>
-                            </li>
-                        </ul>
-                        <p class="mt-6 text-sm text-gray-400 italic text-center border-t border-red-500/20 pt-4">
-                            "If you're using Recovery & Renewal, we genuinely have no idea. That's by design."
-                        </p>
-                    </div>
-                </section>
-
-                <!-- How it works -->
-                <section class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <h3 class="text-lg font-bold text-cyan mb-3">On Your Device</h3>
-                        <p class="text-sm text-gray-300 leading-relaxed">
-                            All readings, prayers, milestone dates, and step work are stored locally using your device's secure storage. Nothing leaves your phone.
-                        </p>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-cyan mb-3">Offline First</h3>
-                        <p class="text-sm text-gray-300 leading-relaxed">
-                            The entire app works without an internet connection. 31,103 Bible verses and 2,400+ devotionals are pre-loaded.
-                        </p>
-                    </div>
-                </section>
-
-                <!-- Transparency -->
-                <section>
-                    <h2 class="text-2xl font-bold text-white mb-4">Open Source Transparency</h2>
-                    <p class="text-gray-300 mb-4">
-                        You don't have to take our word for it. Our complete source code is available on GitHub. Anyone can audit our code to verify zero data collection.
-                    </p>
-                    <a href="https://github.com/recoveryandrenewal" target="_blank" class="inline-flex items-center gap-2 text-cyan hover:text-white transition-colors">
-                        <i data-lucide="github" class="w-4 h-4"></i>
-                        View Source Code
-                    </a>
-                </section>
-                
-                <!-- Legal / Deletion -->
-                <section class="border-t border-white/10 pt-8">
-                    <h3 class="font-bold text-white mb-2">Deleting Your Data</h3>
-                    <p class="text-gray-400 text-sm mb-6">
-                        When you uninstall Recovery & Renewal, <span class="text-white">all your local data is deleted with it</span>. We don't have backups, copies, or records—because we never collected anything in the first place.
-                    </p>
-
-                    <h3 class="font-bold text-white mb-2">GDPR / CCPA</h3>
-                    <p class="text-gray-400 text-sm">
-                        Since we collect no personal data, data protection laws like GDPR and CCPA don't apply to our app's operation. You have nothing to request, delete, or opt out of—because there is nothing to request.
-                    </p>
-                </section>
-
-            </div>
-
-            <!-- The Promise Footer -->
-            <div class="mt-12 text-center">
-                <div class="glass-card p-8 rounded-2xl inline-block w-full">
-                    <h3 class="text-xl font-bold text-white mb-4">Our Promise</h3>
-                    <p class="text-gray-300 italic max-w-xl mx-auto">
-                        "Recovery is hard enough without worrying about who's watching. You deserve privacy. You deserve dignity. You deserve tools that serve you—not advertisers, not data brokers, not us."
-                    </p>
-                    <div class="mt-6 pt-6 border-t border-white/10">
-                        <p class="text-cyan font-bold tracking-widest text-sm uppercase">Freely you have received, freely give.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Footer Contact -->
-            <div class="text-center mt-12 text-sm text-gray-500">
-                <p class="mb-2">Questions?</p>
-                <a href="mailto:recoveryandrenewal@protonmail.com" class="text-cyan hover:underline">recoveryandrenewal@protonmail.com</a>
-            </div>
-
+    <main class="flex-grow flex flex-col items-center justify-start relative z-10 px-4 pb-20 pt-8">
+        
+        <!-- Header -->
+        <div class="max-w-4xl w-full text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                Radical <span class="text-cyan">Privacy</span>
+            </h1>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                Recovery requires honesty. Honesty requires safety. Safety requires privacy.
+            </p>
         </div>
+
+        <!-- Policy Content -->
+        <div class="max-w-3xl w-full space-y-12">
+
+            <!-- Summary Box -->
+            <div class="glass-panel p-8 rounded-2xl border-l-4 border-cyan text-left">
+                <h2 class="text-2xl font-bold mb-4 flex items-center gap-3">
+                    <i data-lucide="shield-check" class="text-cyan"></i>
+                    The "Too Long; Didn't Read" Version
+                </h2>
+                <ul class="space-y-3 text-gray-300">
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check" class="text-cyan w-5 h-5 mt-1"></i>
+                        <span><strong>No Accounts:</strong> You don't create a login. We don't know who you are.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check" class="text-cyan w-5 h-5 mt-1"></i>
+                        <span><strong>No Cloud:</strong> All your journal entries, milestones, and settings live on your phone.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i data-lucide="check" class="text-cyan w-5 h-5 mt-1"></i>
+                        <span><strong>No Tracking:</strong> We don't use Google Analytics, Facebook Pixels, or crash trackers.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Detailed Sections -->
+            <div class="space-y-8 text-gray-300 leading-relaxed">
+                
+                <section>
+                    <h3 class="text-xl font-bold text-white mb-3">1. Data Collection</h3>
+                    <p>
+                        We do not collect, transmit, or store any personal data. The Recovery & Renewal app is "offline-first." This means that when you write a journal entry or save a milestone, that data is written to your device's internal storage. It never leaves your phone.
+                    </p>
+                </section>
+
+                <section>
+                    <h3 class="text-xl font-bold text-white mb-3">2. Third-Party Services</h3>
+                    <p>
+                        We do not integrate with third-party advertising networks or analytics providers. There is no code in our app that "phones home" to tell us how you use it.
+                    </p>
+                </section>
+
+                <section>
+                    <h3 class="text-xl font-bold text-white mb-3">3. Data Deletion</h3>
+                    <p>
+                        Since we do not have your data, we cannot delete it for you. However, you have full control. If you uninstall the app, your data is destroyed by your operating system. There is no backup on our servers because there are no servers.
+                    </p>
+                </section>
+
+                <section>
+                    <h3 class="text-xl font-bold text-white mb-3">4. Contacting Us</h3>
+                    <p>
+                        If you email us for support, we will see your email address. We use this solely to reply to your question. We do not build mailing lists, and we will never sell your contact info.
+                    </p>
+                </section>
+
+                <div class="pt-8 border-t border-white/10 text-sm text-gray-500">
+                    <p>Last Updated: December 25, 2025</p>
+                </div>
+
+            </div>
+        </div>
+
     </main>
+
+    <footer class="w-full border-t border-white/10 bg-[#0F0F1B]/80 backdrop-blur-md py-8 mt-auto">
+        <div class="max-w-6xl mx-auto px-6 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
+            
+            <div class="text-sm text-gray-500">
+                <p>&copy; 2025 Recovery & Renewal.</p>
+                <p class="mt-1">Contact: <a href="mailto:recoveryandrenewal@protonmail.com" class="text-cyan hover:underline">recoveryandrenewal@protonmail.com</a></p>
+            </div>
+
+            <div class="flex items-center gap-4 text-sm flex-wrap justify-center md:justify-start">
+                <a href="/privacy.html" class="text-cyan hover:text-white transition-colors">Privacy</a>
+                <span class="text-gray-700">•</span>
+                <a href="/about.html" class="text-cyan hover:text-white transition-colors">About</a>
+                <span class="text-gray-700">•</span>
+                <a href="/credits.html" class="text-cyan hover:text-white transition-colors">Credits</a>
+                <span class="text-gray-700">•</span>
+                <a href="/community.html" class="text-cyan hover:text-white transition-colors">Thanks</a>
+                <span class="text-gray-700">•</span>
+                <a href="https://github.com/recoveryandrenewal" target="_blank" class="text-cyan hover:text-white transition-colors flex items-center gap-2">
+                    <i data-lucide="github" class="w-4 h-4"></i> GitHub
+                </a>
+                <span class="text-gray-700">•</span>
+                <a href="https://www.facebook.com/profile.php?id=61585437281661" target="_blank" class="text-cyan hover:text-white transition-colors flex items-center gap-2">
+                    <i data-lucide="facebook" class="w-4 h-4"></i> Facebook
+                </a>
+                <span class="text-gray-700">•</span>
+                <a href="https://ko-fi.com/recoveryandrenewal" target="_blank" class="text-cyan hover:text-white transition-colors flex items-center gap-2">
+                    <i data-lucide="coffee" class="w-4 h-4"></i> Support
+                </a>
+            </div>
+        </div>
+    </footer>
 
     <script>
         lucide.createIcons();
