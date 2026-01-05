@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Community & Special Thanks | Recovery & Renewal</title>
-    <meta name="description" content="Recognizing the community, mentors, and tools that made Recovery & Renewal possible.">
+    <title>Community & Thanks | Recovery & Renewal</title>
+    <meta name="description" content="A special thanks to the communities, organizations, and individuals who support the journey of recovery.">
+    <link rel="canonical" href="https://recoveryandrenewal.org/community.html">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -71,46 +72,26 @@
         .p4 { width: 3px; height: 3px; top: 80%; left: 20%; animation-duration: 6.5s; }
         .p5 { width: 4px; height: 4px; top: 30%; left: 50%; background: rgba(217, 70, 239, 0.5); animation-duration: 7.5s; }
 
-        /* --- GLASSMORPHISM --- */
         .glass-panel {
-            background: rgba(20, 20, 35, 0.7);
+            background: rgba(42, 24, 50, 0.6);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(0, 229, 255, 0.1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
         }
 
         .glass-card {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(5px);
-            transition: all 0.3s ease;
         }
-
-        .glass-card:hover {
-            background: rgba(255, 255, 255, 0.07);
-            border-color: rgba(0, 229, 255, 0.3);
-            transform: translateY(-2px);
-        }
-
+        
         .text-cyan { color: #00E5FF; }
         .text-pink { color: #EC4899; }
         .border-cyan { border-color: #00E5FF; }
-        
-        .section-header {
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #EC4899;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
 
-    <!-- Background -->
     <div class="breathing-bg"></div>
     <div class="particles-container">
         <div class="particle p1"></div>
@@ -122,7 +103,7 @@
 
     <!-- Navigation -->
     <nav class="w-full py-6 z-10">
-        <div class="max-w-4xl mx-auto px-6 flex justify-between items-center">
+        <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
             <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
                 <i data-lucide="heart" class="text-pink w-6 h-6 fill-pink/20"></i>
                 <span class="font-bold text-xl tracking-tight text-white">R&R</span>
@@ -133,120 +114,137 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main class="flex-grow px-4 pb-20 pt-8 relative z-10">
-        <div class="max-w-4xl mx-auto">
+    <main class="flex-grow flex flex-col items-center justify-start relative z-10 px-4 pb-20 pt-8">
+        
+        <!-- Header -->
+        <div class="max-w-4xl w-full text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                Recovery <span class="text-pink">Community</span>
+            </h1>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                We are stronger together. A special thanks to the organizations and communities that make recovery possible.
+            </p>
+        </div>
 
-            <div class="text-center mb-16 space-y-4">
-                <h1 class="text-4xl md:text-5xl font-bold">Community & Thanks</h1>
-                <p class="text-xl text-gray-300 max-w-2xl mx-auto font-light">
-                    No one recovers alone. This project exists because of the guidance, faith, and support of these individuals and organizations.
-                </p>
-            </div>
-
-            <!-- Special Thanks Grid -->
-            <div class="grid md:grid-cols-2 gap-8 mb-16">
+        <!-- Community Grid -->
+        <div class="max-w-5xl w-full grid md:grid-cols-2 gap-8 mb-16">
+            
+            <!-- Safe Harbor -->
+            <div class="glass-panel p-8 rounded-2xl relative overflow-hidden group hover:bg-white/5 transition-colors">
+                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <i data-lucide="anchor" class="w-24 h-24 text-cyan"></i>
+                </div>
                 
-                <!-- Unity Bible Church -->
-                <div class="glass-panel rounded-2xl p-8 transform hover:-translate-y-1 transition-transform duration-300">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="bg-blue-500/20 p-3 rounded-full text-blue-400">
-                            <i data-lucide="church" class="w-6 h-6"></i>
-                        </div>
-                        <h2 class="text-2xl font-bold">Unity Bible Church</h2>
-                    </div>
-                    <div class="space-y-4 text-gray-300">
-                        <p>Special thanks to <strong>Pastor Bill Walker</strong> and <strong>Michael Hansen</strong> for their spiritual guidance and unwavering support.</p>
-                        <p>To everyone at Unity Bible Church in Lewiston, Maine: thank you for being a family.</p>
-                    </div>
-                    <div class="mt-6 flex flex-wrap gap-4 text-sm">
-                        <a href="https://unitybible.com" target="_blank" class="flex items-center gap-2 text-cyan hover:text-white transition-colors">
-                            <i data-lucide="globe" class="w-4 h-4"></i> UnityBible.com
-                        </a>
-                        <a href="https://youtube.com/@UnityBibleChurchLewistonME" target="_blank" class="flex items-center gap-2 text-red-400 hover:text-white transition-colors">
-                            <i data-lucide="youtube" class="w-4 h-4"></i> YouTube Channel
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Recovery Connections of Maine -->
-                <div class="glass-panel rounded-2xl p-8 transform hover:-translate-y-1 transition-transform duration-300">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="bg-green-500/20 p-3 rounded-full text-green-400">
-                            <i data-lucide="users" class="w-6 h-6"></i>
-                        </div>
-                        <h2 class="text-2xl font-bold">Recovery Connections</h2>
-                    </div>
-                    <div class="space-y-4 text-gray-300">
-                        <p><strong>Recovery Connections of Maine:</strong> <br> Deep gratitude to Jeremy Hiltz and Michael Conners for their work in the community.</p>
-                    </div>
-                    <div class="mt-6 text-sm">
-                        <a href="https://recoveryconnectionsme.com" target="_blank" class="flex items-center gap-2 text-cyan hover:text-white transition-colors">
-                            <i data-lucide="globe" class="w-4 h-4"></i> recoveryconnectionsme.com
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Sheltered By Jesus L/A -->
-                 <div class="glass-panel rounded-2xl p-8 transform hover:-translate-y-1 transition-transform duration-300 md:col-span-2">
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="bg-pink-500/20 p-3 rounded-full text-pink-400">
-                            <i data-lucide="home" class="w-6 h-6"></i>
-                        </div>
-                        <h2 class="text-2xl font-bold">Sheltered By Jesus L/A</h2>
-                    </div>
-                    <div class="space-y-4 text-gray-300">
-                        <p><strong>The Shelter:</strong> <br> To Eric and Pete — thank you for walking this road with me.</p>
-                    </div>
-                    <div class="mt-6 text-sm">
-                        <a href="https://shelteredbyjesusla.com/" target="_blank" class="flex items-center gap-2 text-cyan hover:text-white transition-colors">
-                            <i data-lucide="globe" class="w-4 h-4"></i> shelteredbyjesusla.com
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- AI Collaborators -->
-            <div class="glass-card p-8 rounded-2xl mb-16 border-t-4 border-t-purple-500">
-                <div class="section-header">
-                    <i data-lucide="sparkles" class="w-5 h-5 inline-block mr-2"></i> Built with AI
-                </div>
-                <p class="text-gray-300 mb-6">
-                    As a solo developer with limited resources, I relied heavily on artificial intelligence to help write code, debug errors, and structure this project. This app is a testament to how these tools can empower individuals to build things that matter.
+                <h2 class="text-2xl font-bold mb-2">Safe Harbor Recovery Center</h2>
+                <p class="text-cyan text-sm mb-4 uppercase tracking-wider font-semibold">Portsmouth, NH</p>
+                
+                <p class="text-gray-300 mb-6 leading-relaxed">
+                    A beacon of hope on the Seacoast. Safe Harbor provides peer support, meetings, and a welcoming community for anyone seeking recovery. Their tireless work saves lives every day.
                 </p>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                    <a href="https://perplexity.ai" target="_blank" class="glass-card p-4 rounded-xl hover:bg-white/10 transition-colors group">
-                        <span class="block font-bold text-white group-hover:text-cyan transition-colors">Perplexity</span>
-                        <span class="text-xs text-gray-500">Research & Knowledge</span>
-                    </a>
-                    <a href="https://claude.ai" target="_blank" class="glass-card p-4 rounded-xl hover:bg-white/10 transition-colors group">
-                        <span class="block font-bold text-white group-hover:text-cyan transition-colors">Claude</span>
-                        <span class="text-xs text-gray-500">Coding Assistance</span>
-                    </a>
-                    <a href="https://gemini.google.com" target="_blank" class="glass-card p-4 rounded-xl hover:bg-white/10 transition-colors group">
-                        <span class="block font-bold text-white group-hover:text-cyan transition-colors">Gemini Pro</span>
-                        <span class="text-xs text-gray-500">Logic & Analysis</span>
-                    </a>
-                    <a href="https://grok.x.ai" target="_blank" class="glass-card p-4 rounded-xl hover:bg-white/10 transition-colors group">
-                        <span class="block font-bold text-white group-hover:text-cyan transition-colors">Grok</span>
-                        <span class="text-xs text-gray-500">Creative Input</span>
-                    </a>
-                </div>
+
+                <a href="https://granitepathways.org/safe-harbor-recovery-center/" target="_blank" class="inline-flex items-center gap-2 text-sm text-cyan hover:text-white transition-colors">
+                    Visit Website <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
             </div>
 
-            <!-- Footer Message -->
-            <div class="text-center text-gray-400 italic">
-                <p>"Iron sharpeneth iron; so a man sharpeneth the countenance of his friend." — Proverbs 27:17</p>
+            <!-- SOS Recovery -->
+            <div class="glass-panel p-8 rounded-2xl relative overflow-hidden group hover:bg-white/5 transition-colors">
+                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <i data-lucide="life-buoy" class="w-24 h-24 text-pink"></i>
+                </div>
+                
+                <h2 class="text-2xl font-bold mb-2">SOS Recovery Community Org</h2>
+                <p class="text-pink text-sm mb-4 uppercase tracking-wider font-semibold">Rochester, Dover, & Hampton, NH</p>
+                
+                <p class="text-gray-300 mb-6 leading-relaxed">
+                    Building recovery capital through peer-based support. SOS RCO demonstrates that recovery is not just possible, but probable, when people are given the right tools and community.
+                </p>
+
+                <a href="https://sosrco.org/" target="_blank" class="inline-flex items-center gap-2 text-sm text-pink hover:text-white transition-colors">
+                    Visit Website <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+            <!-- Portland Recovery -->
+            <div class="glass-panel p-8 rounded-2xl relative overflow-hidden group hover:bg-white/5 transition-colors">
+                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <i data-lucide="map-pin" class="w-24 h-24 text-purple-400"></i>
+                </div>
+                
+                <h2 class="text-2xl font-bold mb-2">Portland Recovery Community Center</h2>
+                <p class="text-purple-400 text-sm mb-4 uppercase tracking-wider font-semibold">Portland, ME</p>
+                
+                <p class="text-gray-300 mb-6 leading-relaxed">
+                    A safe haven where people in recovery can meet, organize, and grow. PRCC proves that community is the antidote to isolation.
+                </p>
+
+                <a href="https://portlandrecovery.org/" target="_blank" class="inline-flex items-center gap-2 text-sm text-purple-400 hover:text-white transition-colors">
+                    Visit Website <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+             <!-- Maine General -->
+             <div class="glass-panel p-8 rounded-2xl relative overflow-hidden group hover:bg-white/5 transition-colors">
+                <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <i data-lucide="stethoscope" class="w-24 h-24 text-green-400"></i>
+                </div>
+                
+                <h2 class="text-2xl font-bold mb-2">Maine General Medical Center</h2>
+                <p class="text-green-400 text-sm mb-4 uppercase tracking-wider font-semibold">Augusta, ME</p>
+                
+                <p class="text-gray-300 mb-6 leading-relaxed">
+                    Providing critical care and comprehensive addiction medicine services. Their compassionate approach to treatment helps individuals find their footing on the path to wellness.
+                </p>
+
+                <a href="https://www.mainegeneral.org/" target="_blank" class="inline-flex items-center gap-2 text-sm text-green-400 hover:text-white transition-colors">
+                    Visit Website <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
             </div>
 
         </div>
+
+        <div class="max-w-3xl mx-auto text-center glass-card border border-white/10 p-8 rounded-2xl">
+            <i data-lucide="heart-handshake" class="w-12 h-12 text-cyan mx-auto mb-4"></i>
+            <h3 class="text-xl font-bold mb-2">Want to be listed?</h3>
+            <p class="text-gray-400 mb-6">
+                If you run a non-profit recovery organization in New England and would like to be included here or partnered with our resource directory, please reach out.
+            </p>
+            <a href="mailto:recoveryandrenewal@protonmail.com" class="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 px-6 py-3 rounded-xl transition-colors font-semibold">
+                Contact Us
+            </a>
+        </div>
+
     </main>
 
-    <!-- Footer -->
     <footer class="w-full border-t border-white/10 bg-[#0F0F1B]/80 backdrop-blur-md py-8 mt-auto">
-        <div class="max-w-4xl mx-auto px-6 text-center text-sm text-gray-500">
-            <p>&copy; 2025 Recovery & Renewal.</p>
+        <div class="max-w-6xl mx-auto px-6 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
+            
+            <div class="text-sm text-gray-500">
+                <p>&copy; 2025 Recovery & Renewal.</p>
+                <p class="mt-1">Contact: <a href="mailto:recoveryandrenewal@protonmail.com" class="text-cyan hover:underline">recoveryandrenewal@protonmail.com</a></p>
+            </div>
+
+            <div class="flex items-center gap-4 text-sm flex-wrap justify-center md:justify-start">
+                <a href="/privacy.html" class="text-cyan hover:text-white transition-colors">Privacy</a>
+                <span class="text-gray-700">•</span>
+                <a href="/about.html" class="text-cyan hover:text-white transition-colors">About</a>
+                <span class="text-gray-700">•</span>
+                <a href="/credits.html" class="text-cyan hover:text-white transition-colors">Credits</a>
+                <span class="text-gray-700">•</span>
+                <a href="/community.html" class="text-cyan hover:text-white transition-colors">Thanks</a>
+                <span class="text-gray-700">•</span>
+                <a href="https://github.com/recoveryandrenewal" target="_blank" class="text-cyan hover:text-white transition-colors flex items-center gap-2">
+                    <i data-lucide="github" class="w-4 h-4"></i> GitHub
+                </a>
+                <span class="text-gray-700">•</span>
+                <a href="https://www.facebook.com/profile.php?id=61585437281661" target="_blank" class="text-cyan hover:text-white transition-colors flex items-center gap-2">
+                    <i data-lucide="facebook" class="w-4 h-4"></i> Facebook
+                </a>
+                <span class="text-gray-700">•</span>
+                <a href="https://ko-fi.com/recoveryandrenewal" target="_blank" class="text-cyan hover:text-white transition-colors flex items-center gap-2">
+                    <i data-lucide="coffee" class="w-4 h-4"></i> Support
+                </a>
+            </div>
         </div>
     </footer>
 
