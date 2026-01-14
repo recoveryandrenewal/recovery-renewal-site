@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Recovery & Renewal</title>
-    <meta name="description" content="The story behind Recovery & Renewal. How one man's journey led to a free, privacy-first tool for others.">
-    <link rel="canonical" href="https://recoveryandrenewal.org/about.html">
-    
+    <meta name="description" content="The story behind Recovery & Renewal. Built by a homeless veteran in recovery to provide free tools for the community.">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
@@ -72,26 +71,58 @@
         .p4 { width: 3px; height: 3px; top: 80%; left: 20%; animation-duration: 6.5s; }
         .p5 { width: 4px; height: 4px; top: 30%; left: 50%; background: rgba(217, 70, 239, 0.5); animation-duration: 7.5s; }
 
+        /* --- GLASSMORPHISM & UTILS --- */
         .glass-panel {
-            background: rgba(42, 24, 50, 0.6);
+            background: rgba(20, 20, 35, 0.7);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(0, 229, 255, 0.1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         .glass-card {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
         }
-        
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(0, 229, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
         .text-cyan { color: #00E5FF; }
         .text-pink { color: #EC4899; }
         .border-cyan { border-color: #00E5FF; }
+
+        /* Highlight Utility for inline text */
+        .highlight {
+            color: #00E5FF;
+            font-weight: 600;
+        }
+
+        /* Profile Image Ring Animation */
+        .profile-ring {
+            position: relative;
+        }
+        .profile-ring::before {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #00E5FF, #EC4899);
+            z-index: -1;
+            opacity: 0.7;
+            animation: spin 10s linear infinite;
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
     </style>
 </head>
 <body class="flex flex-col min-h-screen">
 
+    <!-- Background -->
     <div class="breathing-bg"></div>
     <div class="particles-container">
         <div class="particle p1"></div>
@@ -114,161 +145,125 @@
         </div>
     </nav>
 
-    <main class="flex-grow flex flex-col items-center justify-start relative z-10 px-4 pb-20 pt-8">
-        
-        <!-- Header -->
-        <div class="max-w-4xl w-full text-center mb-16">
-            <h1 class="text-4xl md:text-5xl font-bold mb-6">
-                Recovery is <span class="text-cyan">Personal.</span>
-            </h1>
-            <p class="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-                This project was born out of necessity, built in solitude, and released for anyone who needs a quiet place to heal.
-            </p>
-        </div>
+    <!-- Main Content -->
+    <main class="flex-grow px-4 pb-20 pt-8 relative z-10">
+        <div class="max-w-4xl mx-auto">
 
-        <!-- Bill's Section -->
-        <div class="max-w-5xl w-full grid md:grid-cols-2 gap-12 items-center mb-24">
-            
-            <!-- Image Side -->
-            <div class="relative order-2 md:order-1">
-                <div class="glass-panel p-2 rounded-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
-                    <img src="bill-portrait.jpg" alt="Bill - Founder of Recovery & Renewal" class="rounded-xl w-full h-auto shadow-2xl">
-                </div>
-                <!-- Floating Badge -->
-                <div class="absolute -bottom-6 -right-6 glass-card px-6 py-4 rounded-xl border border-cyan/20 backdrop-blur-md hidden md:block">
-                    <div class="flex items-center gap-3">
-                        <i data-lucide="code-2" class="text-cyan"></i>
-                        <div>
-                            <p class="text-xs text-gray-400 uppercase tracking-wider">Role</p>
-                            <p class="font-bold">Solo Developer</p>
+            <!-- Intro / Bio Section -->
+            <div class="glass-panel rounded-3xl p-8 md:p-12 mb-12">
+                <div class="flex flex-col md:flex-row items-center gap-10">
+
+                    <!-- Profile Photo with Cosmic Ring -->
+                    <div class="flex-shrink-0">
+                        <div class="profile-ring w-48 h-48 md:w-56 md:h-56 rounded-full">
+                            <img src="bill-portrait.jpg" alt="Bill - Creator of Recovery & Renewal" class="w-full h-full object-cover rounded-full border-4 border-[#121024]">
+                        </div>
+                    </div>
+
+                    <!-- Text Content -->
+                    <div class="text-center md:text-left space-y-4">
+                        <h1 class="text-3xl md:text-4xl font-bold">About <span class="text-cyan">Recovery & Renewal</span></h1>
+                        <p class="text-xl text-pink font-medium italic">Built by someone who's been there.</p>
+                        <p class="text-gray-400">One veteran, one laptop, one mission.</p>
+
+                        <div class="prose prose-invert text-gray-300 leading-relaxed mt-4 max-w-xl">
+                            <p>Bill is a homeless U.S. Navy veteran with an A.A.S. in Information Technology and a person in active recovery from alcoholism. He currently lives in a Christian men's shelter in Lewiston, Maine, where he volunteers in the kitchen and attends Unity Bible Church.</p>
+                            <p class="mt-4">Despite a felony conviction in 2014 that kept him out of the IT industry, he single-handedly designed and developed Recovery & Renewal on a refurbished $200 HP laptop with the help of AI tools. He hopes to continue rebuilding his life as an independent developer.</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Text Side -->
-            <div class="space-y-6 order-1 md:order-2">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan/10 border border-cyan/20 text-cyan text-xs font-bold uppercase tracking-wide">
-                    The Creator
-                </div>
-                <h2 class="text-3xl font-bold">Meet Bill</h2>
-                <div class="space-y-4 text-gray-300 leading-relaxed">
-                    <p>
-                        I'm a disabled veteran, a software developer, and a man in long-term recovery. For years, I searched for a digital companion that respected my privacy as much as it respected my journey.
-                    </p>
-                    <p>
-                        Most apps wanted my email, my data, or a subscription fee. They felt like businesses first and tools second.
-                    </p>
-                    <p>
-                        So I built <span class="text-white font-semibold">Recovery & Renewal</span>. No investors. No tracking. No paywalls. Just a tool I use every day, shared with you.
-                    </p>
-                </div>
-                
-                <div class="pt-4 flex flex-wrap gap-4">
-                    <div class="flex items-center gap-2 text-sm text-gray-400 bg-white/5 px-4 py-2 rounded-lg border border-white/5">
-                        <i data-lucide="map-pin" class="w-4 h-4 text-pink"></i>
-                        Built in Lewiston, Maine
+            <!-- The Mission Block -->
+            <div class="relative glass-card rounded-2xl p-8 md:p-10 mb-12 border-l-4 border-l-pink-500 overflow-hidden">
+                <!-- Background decorative glow -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-pink-500/10 blur-3xl rounded-full -mr-20 -mt-20 pointer-events-none"></div>
+
+                <h3 class="text-xl font-bold text-pink uppercase tracking-widest mb-4 flex items-center gap-2">
+                    <i data-lucide="target" class="w-5 h-5"></i> The Mission
+                </h3>
+                <p class="text-lg text-gray-200 leading-relaxed relative z-10">
+                    Recovery & Renewal exists to provide <span class="highlight">free, privacy-first tools</span> for anyone seeking sobriety, spiritual growth, or a fresh start. No paywalls. No data collection. No corporate agenda. Just one person giving back to the community that saved his life.
+                </p>
+                <p class="mt-6 text-pink font-serif italic text-xl">"Freely you have received, freely give." — Matthew 10:8</p>
+            </div>
+
+            <!-- Journey Photo -->
+            <div class="w-full mb-16 relative group">
+                <div class="absolute inset-0 bg-cyan-500/20 blur-xl group-hover:bg-cyan-500/30 transition-all duration-700"></div>
+                <img src="bill-lewiston.jpg" alt="On the road to recovery in Lewiston, Maine" class="relative z-10 w-full h-64 md:h-96 object-cover rounded-2xl border border-white/10 shadow-2xl grayscale group-hover:grayscale-0 transition-all duration-700">
+                <p class="text-center text-xs text-gray-500 mt-3 font-mono">Lewiston, Maine — The journey continues.</p>
+            </div>
+
+            <!-- What's Inside (Stats Grid) -->
+            <div class="mb-16">
+                <h2 class="text-2xl font-bold mb-8 text-center md:text-left">What's Inside the App</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <!-- Stat 1 -->
+                    <div class="glass-card p-6 rounded-xl text-center">
+                        <span class="block text-3xl md:text-4xl font-bold text-cyan mb-2">31k+</span>
+                        <span class="text-xs text-gray-400 uppercase tracking-wider">Bible Verses (KJV)</span>
                     </div>
-                    <div class="flex items-center gap-2 text-sm text-gray-400 bg-white/5 px-4 py-2 rounded-lg border border-white/5">
-                        <i data-lucide="shield" class="w-4 h-4 text-cyan"></i>
-                        Veteran Owned
+                    <!-- Stat 2 -->
+                    <div class="glass-card p-6 rounded-xl text-center">
+                        <span class="block text-3xl md:text-4xl font-bold text-cyan mb-2">2,400</span>
+                        <span class="text-xs text-gray-400 uppercase tracking-wider">Readings</span>
+                    </div>
+                    <!-- Stat 3 -->
+                    <div class="glass-card p-6 rounded-xl text-center">
+                        <span class="block text-3xl md:text-4xl font-bold text-cyan mb-2">12</span>
+                        <span class="text-xs text-gray-400 uppercase tracking-wider">Step Worksheets</span>
+                    </div>
+                    <!-- Stat 4 -->
+                    <div class="glass-card p-6 rounded-xl text-center border-pink-500/30">
+                        <span class="block text-3xl md:text-4xl font-bold text-pink mb-2">100%</span>
+                        <span class="text-xs text-gray-400 uppercase tracking-wider">Free Forever</span>
                     </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- Mission Grid -->
-        <div class="max-w-6xl w-full grid md:grid-cols-3 gap-6 mb-24">
-            <div class="glass-panel p-8 rounded-2xl hover:bg-white/5 transition-colors">
-                <div class="w-12 h-12 bg-pink/20 rounded-xl flex items-center justify-center mb-6">
-                    <i data-lucide="lock" class="w-6 h-6 text-pink"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-3">Radical Privacy</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                    Your recovery data is yours alone. This app has no servers, no analytics, and no login screens. If you delete the app, your data vanishes forever.
+                <p class="mt-6 text-gray-400 text-center text-sm md:text-base max-w-2xl mx-auto">
+                    Combining Christian devotionals (Spurgeon), Buddhist wisdom (Dhammapada), Stoic philosophy, and 12-Step tools in one offline-first companion.
                 </p>
             </div>
 
-            <div class="glass-panel p-8 rounded-2xl hover:bg-white/5 transition-colors">
-                <div class="w-12 h-12 bg-cyan/20 rounded-xl flex items-center justify-center mb-6">
-                    <i data-lucide="wifi-off" class="w-6 h-6 text-cyan"></i>
+            <!-- Tech & Pricing -->
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="glass-card p-8 rounded-2xl">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="code" class="text-gray-400"></i>
+                        <h3 class="font-bold text-lg">The Tech</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Built with <span class="highlight">React Native</span> and <span class="highlight">Expo</span>. Runs entirely offline. All data stays on your device—no cloud sync, no analytics. The source code is available on <a href="https://github.com/recoveryandrenewal" class="text-cyan hover:underline">GitHub</a>.
+                    </p>
                 </div>
-                <h3 class="text-xl font-bold mb-3">Offline First</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                    Recovery doesn't always happen where the Wi-Fi is good. The entire app—devotionals, tools, and resources—works 100% offline.
-                </p>
+                <div class="glass-card p-8 rounded-2xl">
+                     <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="heart-handshake" class="text-gray-400"></i>
+                        <h3 class="font-bold text-lg">Why Free?</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Recovery saved Bill's life. This is his way of paying it forward. <a href="https://ko-fi.com/recoveryandrenewal" class="text-cyan hover:underline">Ko-fi donations</a> are accepted for hosting, but the app will always be free, ad-free, and open-source.
+                    </p>
+                </div>
             </div>
 
-            <div class="glass-panel p-8 rounded-2xl hover:bg-white/5 transition-colors">
-                <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center mb-6">
-                    <i data-lucide="heart-handshake" class="w-6 h-6 text-purple-400"></i>
+            <!-- Footer Links -->
+            <div class="text-center pt-8 border-t border-white/10">
+                <div class="flex flex-wrap justify-center gap-6 text-sm">
+                    <a href="mailto:recoveryandrenewal@protonmail.com" class="text-gray-400 hover:text-cyan flex items-center gap-2">
+                        <i data-lucide="mail" class="w-4 h-4"></i> Email
+                    </a>
+                    <a href="https://github.com/recoveryandrenewal" target="_blank" class="text-gray-400 hover:text-cyan flex items-center gap-2">
+                        <i data-lucide="github" class="w-4 h-4"></i> GitHub
+                    </a>
+                    <a href="https://ko-fi.com/recoveryandrenewal" target="_blank" class="text-gray-400 hover:text-cyan flex items-center gap-2">
+                        <i data-lucide="coffee" class="w-4 h-4"></i> Support (Ko-fi)
+                    </a>
                 </div>
-                <h3 class="text-xl font-bold mb-3">Always Free</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                    You can't put a price on sobriety. The core app will always be free. If you want to support development, you can, but you never have to.
-                </p>
             </div>
+
         </div>
-
-        <!-- FAQ / Tech Stack Section -->
-        <div class="max-w-3xl w-full">
-            <h2 class="text-2xl font-bold mb-8 text-center">Under The Hood</h2>
-            
-            <div class="glass-card border border-white/10 rounded-2xl overflow-hidden divide-y divide-white/10">
-                <div class="p-6">
-                    <h4 class="font-semibold text-cyan mb-2">How is it built?</h4>
-                    <p class="text-sm text-gray-400">
-                        Built with React Native and Expo for a smooth, native experience on Android (and soon iOS). The UI uses a custom design system focused on calm, dark-mode aesthetics to reduce eye strain.
-                    </p>
-                </div>
-                <div class="p-6">
-                    <h4 class="font-semibold text-pink mb-2">Why open source?</h4>
-                    <p class="text-sm text-gray-400">
-                        Trust is earned. By making the code public on GitHub, anyone can verify that we aren't tracking you. It also allows the recovery community to contribute improvements.
-                    </p>
-                </div>
-                <div class="p-6">
-                    <h4 class="font-semibold text-purple-400 mb-2">How can I help?</h4>
-                    <p class="text-sm text-gray-400">
-                        Spread the word. If you're a developer, check out the GitHub repo. If you're just a fan, consider buying me a coffee to keep the servers (well, the website hosting) running.
-                    </p>
-                </div>
-            </div>
-        </div>
-
     </main>
-
-    <footer class="w-full border-t border-white/10 bg-[#0F0F1B]/80 backdrop-blur-md py-8 mt-auto">
-        <div class="max-w-6xl mx-auto px-6 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
-            
-            <div class="text-sm text-gray-500">
-                <p>&copy; 2025 Recovery & Renewal.</p>
-                <p class="mt-1">Contact: <a href="mailto:recoveryandrenewal@protonmail.com" class="text-cyan hover:underline">recoveryandrenewal@protonmail.com</a></p>
-            </div>
-
-            <div class="flex items-center gap-4 text-sm flex-wrap justify-center md:justify-start">
-                <a href="/privacy.html" class="text-cyan hover:text-white transition-colors">Privacy</a>
-                <span class="text-gray-700">•</span>
-                <a href="/about.html" class="text-cyan hover:text-white transition-colors">About</a>
-                <span class="text-gray-700">•</span>
-                <a href="/credits.html" class="text-cyan hover:text-white transition-colors">Credits</a>
-                <span class="text-gray-700">•</span>
-                <a href="/community.html" class="text-cyan hover:text-white transition-colors">Thanks</a>
-                <span class="text-gray-700">•</span>
-                <a href="https://github.com/recoveryandrenewal" target="_blank" class="text-cyan hover:text-white transition-colors flex items-center gap-2">
-                    <i data-lucide="github" class="w-4 h-4"></i> GitHub
-                </a>
-                <span class="text-gray-700">•</span>
-                <a href="https://www.facebook.com/profile.php?id=61585437281661" target="_blank" class="text-cyan hover:text-white transition-colors flex items-center gap-2">
-                    <i data-lucide="facebook" class="w-4 h-4"></i> Facebook
-                </a>
-                <span class="text-gray-700">•</span>
-                <a href="https://ko-fi.com/recoveryandrenewal" target="_blank" class="text-cyan hover:text-white transition-colors flex items-center gap-2">
-                    <i data-lucide="coffee" class="w-4 h-4"></i> Support
-                </a>
-            </div>
-        </div>
-    </footer>
 
     <script>
         lucide.createIcons();
