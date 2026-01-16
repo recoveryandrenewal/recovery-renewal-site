@@ -2,37 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://recoveryandrenewal.org/</loc>
-    <lastmod>2025-12-25</lastmod>
+    <lastmod>2026-01-16</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://recoveryandrenewal.org/gallery.html</loc>
-    <lastmod>2025-12-25</lastmod>
+    <lastmod>2026-01-16</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://recoveryandrenewal.org/pioneerteam.html</loc>
-    <lastmod>2025-12-25</lastmod>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://recoveryandrenewal.org/about.html</loc>
-    <lastmod>2025-12-25</lastmod>
+    <lastmod>2026-01-16</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://recoveryandrenewal.org/privacy.html</loc>
-    <lastmod>2025-12-25</lastmod>
+    <lastmod>2026-01-16</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://recoveryandrenewal.org/community.html</loc>
-    <lastmod>2025-12-25</lastmod>
+    <lastmod>2026-01-16</lastmod>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://recoveryandrenewal.org/credits.html</loc>
-    <lastmod>2025-12-25</lastmod>
+    <lastmod>2026-01-16</lastmod>
     <priority>0.4</priority>
   </url>
 </urlset>
