@@ -176,26 +176,38 @@
             </div>
 
             <!-- Download Card -->
-            <a href="https://play.google.com/store/apps/details?id=com.anonymous.RecoveryAndRenewal" target="_blank" rel="noopener" class="block group">
+            <div class="block group">
                 <div class="glass-panel p-6 rounded-2xl border border-cyan/30 relative overflow-hidden">
                     <div class="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-40 transition-opacity">
                         <i data-lucide="smartphone" class="w-24 h-24 text-cyan"></i>
                     </div>
                     
                     <h2 class="text-xl font-bold mb-1">Get the App</h2>
-                    <p class="text-sm text-gray-300 mb-4">Version 1.0.3 • Live on Google Play</p>
+                    <p class="text-sm text-gray-300 mb-4">Live on Google Play</p>
 
-                    <!-- Official-style Play badge -->
-                    <div class="inline-flex items-center rounded-xl bg-white/5 border border-white/10 p-2 group-hover:bg-white/10 group-hover:border-white/20 transition-all">
-                        <img
-                            src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-                            alt="Get it on Google Play"
-                            class="h-12 w-auto"
-                            loading="lazy"
-                        >
+                    <!-- Store Badges -->
+                    <div class="flex flex-wrap gap-3">
+                        <!-- Google Play Official Badge -->
+                        <a href="https://play.google.com/store/apps/details?id=com.anonymous.RecoveryAndRenewal" target="_blank" rel="noopener" class="inline-flex items-center rounded-lg hover:opacity-80 transition-opacity">
+                            <img
+                                src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                                alt="Get it on Google Play"
+                                class="h-12 w-auto"
+                                loading="lazy"
+                            >
+                        </a>
+
+                        <!-- App Store Coming Soon Badge -->
+                        <div class="inline-flex items-center justify-center px-4 h-12 rounded-lg bg-white/5 border border-white/10 text-gray-400 gap-2 cursor-not-allowed opacity-70">
+                            <i data-lucide="apple" class="w-6 h-6 fill-current"></i>
+                            <div class="flex flex-col leading-none text-left">
+                                <span class="text-[8px] uppercase tracking-wider">Coming Soon</span>
+                                <span class="text-xs font-bold">App Store</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </a>
+            </div>
 
             <!-- Features Grid (Bento) -->
             <div class="grid grid-cols-2 gap-4">
@@ -300,9 +312,7 @@
 
             <!-- Developer Profile Card -->
             <a href="/about.html" class="block glass-panel p-5 rounded-2xl border border-cyan/20 flex items-center gap-4 hover:bg-white/5 transition-colors">
-                <div class="w-14 h-14 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-xl font-bold">
-                    WR
-                </div>
+                <!-- Removed WR Circle -->
                 <div>
                     <h3 class="font-bold text-lg">Meet The Developer</h3>
                     <p class="text-sm text-gray-300">Read the story behind the mission.</p>
@@ -364,6 +374,10 @@
                 <a href="/privacy.html" class="flex items-center justify-between p-4 hover:bg-white/5">
                     <span class="text-sm font-medium">Privacy Policy</span>
                     <i data-lucide="chevron-right" class="w-4 h-4 text-gray-500"></i>
+                </a>
+                <a href="mailto:recoveryandrenewal@protonmail.com" class="flex items-center justify-between p-4 hover:bg-white/5">
+                    <span class="text-sm font-medium text-cyan">Contact Us</span>
+                    <i data-lucide="mail" class="w-4 h-4 text-gray-500"></i>
                 </a>
             </div>
 
