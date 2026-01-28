@@ -5,9 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recovery & Renewal | Privacy-First Recovery</title>
     <meta name="description" content="A free, privacy-first recovery companion app. Zero data collection. No tracking. Built by a veteran.">
-    <link rel="canonical" href="https://recoveryandrenewal.org/">
-    <!-- Explicit Robots Tag for Faster Indexing -->
-    <meta name="robots" content="index, follow">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -18,26 +15,21 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
-        /* --- THEME COLORS --- 
-           Cosmic Deep: #121024, #2A1832, #151525
-           Accent Cyan: #00E5FF
-           Accent Pink: #EC4899
-        */
-
+        /* --- COSMIC THEME --- */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #121024;
             color: #ffffff;
             overflow-x: hidden;
+            /* Prevent scrolling on body, let the tab content scroll */
+            overflow-y: hidden; 
+            height: 100vh;
         }
 
         /* --- ANIMATIONS --- */
         .breathing-bg {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             z-index: -2;
             background: linear-gradient(135deg, #121024, #2A1832, #151525, #3E1E45);
             background-size: 400% 400%;
@@ -52,10 +44,7 @@
 
         .particles-container {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             z-index: -1;
             pointer-events: none;
         }
@@ -79,39 +68,68 @@
         .p4 { width: 3px; height: 3px; top: 80%; left: 20%; animation-duration: 6.5s; }
         .p5 { width: 4px; height: 4px; top: 30%; left: 50%; background: rgba(217, 70, 239, 0.5); animation-duration: 7.5s; }
 
+        /* --- GLASS & CARDS --- */
         .glass-panel {
             background: rgba(42, 24, 50, 0.6);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(0, 229, 255, 0.1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
         }
 
         .glass-card {
             background: rgba(255, 255, 255, 0.03);
             border: 1px solid rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(5px);
+            transition: all 0.2s ease;
         }
         
+        .glass-card:active { transform: scale(0.98); }
+
         .text-cyan { color: #00E5FF; }
         .text-pink { color: #EC4899; }
         .border-cyan { border-color: #00E5FF; }
-        
-        /* Gold/Pioneer Specific Styles */
-        .border-gold { border-color: rgba(234, 179, 8, 0.5); }
-        .text-gold { color: #EAB308; }
-        .bg-gold-glow { background: rgba(234, 179, 8, 0.1); }
-        
-        /* Gallery Preview Styles */
-        .screenshot-preview {
-            transition: all 0.3s ease;
+
+        /* --- APP NAVIGATION & TABS --- */
+        /* The main scrollable container for each tab */
+        .tab-content {
+            display: none; /* Hidden by default */
+            height: 100vh;
+            overflow-y: auto;
+            padding-bottom: 120px; /* Space for bottom nav */
+            padding-top: 20px;
+            animation: fadeIn 0.3s ease-out;
         }
-        .screenshot-preview:hover {
-            transform: scale(1.05);
+
+        /* Show active tab */
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Active State for Nav Buttons */
+        .nav-btn.active {
+            color: #00E5FF;
+        }
+        .nav-btn.active i {
+            stroke: #00E5FF;
+            fill: rgba(0, 229, 255, 0.1);
+        }
+        
+        /* Desktop specific tweaks */
+        @media (min-width: 768px) {
+            .tab-content {
+                padding-bottom: 40px; /* Less padding needed on desktop */
+                padding-top: 80px; /* Space for top nav */
+            }
         }
     </style>
 </head>
-<body class="flex flex-col min-h-screen">
+<body class="text-white">
 
+    <!-- BACKGROUND LAYERS -->
     <div class="breathing-bg"></div>
     <div class="particles-container">
         <div class="particle p1"></div>
@@ -121,338 +139,293 @@
         <div class="particle p5"></div>
     </div>
 
-    <nav class="w-full py-6 z-10">
-        <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
-            <div class="flex items-center gap-3">
-                <i data-lucide="heart" class="text-pink w-6 h-6 fill-pink/20"></i>
-                <span class="font-bold text-xl tracking-tight text-white">R&R</span>
-            </div>
-            <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
-                <a href="#manifesto" class="hover:text-cyan transition-colors">Our Promise</a>
-                <a href="#your-way" class="hover:text-cyan transition-colors">Your Path</a>
-                <a href="/about.html" class="hover:text-cyan transition-colors">About Bill</a>
-                <a href="https://ko-fi.com/recoveryandrenewal" target="_blank" class="px-4 py-2 rounded-full border border-cyan/30 text-cyan hover:bg-cyan/10 transition-all">Support Project</a>
-            </div>
+    <!-- ==============================================
+         DESKTOP NAVIGATION (Hidden on Mobile)
+         ============================================== -->
+    <nav class="hidden md:flex fixed top-0 w-full z-50 bg-[#121024]/80 backdrop-blur-md border-b border-white/5 h-16 items-center justify-between px-8">
+        <div class="flex items-center gap-3">
+            <i data-lucide="heart" class="text-pink w-6 h-6 fill-pink/20"></i>
+            <span class="font-bold text-xl tracking-tight">Recovery & Renewal</span>
+        </div>
+        <div class="flex gap-8 text-sm font-medium text-gray-400">
+            <button onclick="switchTab('home')" class="hover:text-cyan transition-colors">Home</button>
+            <button onclick="switchTab('gallery')" class="hover:text-cyan transition-colors">Gallery</button>
+            <button onclick="switchTab('connect')" class="hover:text-cyan transition-colors">Connect</button>
         </div>
     </nav>
 
-    <main class="flex-grow flex flex-col items-center justify-center relative z-10 px-4 pt-10 pb-20">
-        
-        <div class="max-w-7xl w-full grid lg:grid-cols-2 gap-16 items-center">
+
+    <!-- ==============================================
+         TAB 1: HOME (Main Dashboard)
+         ============================================== -->
+    <div id="tab-home" class="tab-content active px-4">
+        <div class="max-w-xl mx-auto space-y-8 pt-8 md:pt-0">
             
-            <div class="text-center lg:text-left space-y-8">
-                <h1 class="text-5xl md:text-6xl font-bold leading-tight">
-                    Recovery <span class="text-cyan">&</span> <br>
-                    <span class="text-pink">Renewal</span>
+            <!-- Hero Section -->
+            <div class="text-center space-y-4 mb-8">
+                <div class="inline-block p-3 rounded-2xl bg-gradient-to-br from-pink-500/20 to-purple-600/20 border border-white/10 mb-2">
+                    <i data-lucide="heart" class="w-10 h-10 text-pink fill-pink/20"></i>
+                </div>
+                <h1 class="text-4xl font-bold leading-tight">
+                    Recovery <span class="text-cyan">&</span> Renewal
                 </h1>
-                
-                <p class="text-xl text-gray-300 max-w-xl mx-auto lg:mx-0 font-light leading-relaxed">
-                    A privacy-first companion for your journey home. <br>
-                    <span class="text-cyan">Zero tracking.</span> 
-                    <span class="text-cyan">Zero ads.</span> 
-                    <span class="text-cyan">100% Free.</span>
-                </p>
-
-                <!-- Store Buttons -->
-                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-                    <a href="https://play.google.com/store/apps/details?id=com.anonymous.RecoveryAndRenewal" target="_blank" class="flex items-center justify-center gap-3 px-6 py-4 bg-gradient-to-r from-cyan-900/40 to-blue-900/40 border border-cyan/30 rounded-xl text-white font-medium transition-all hover:border-cyan/60 group">
-                        <i data-lucide="play" class="w-5 h-5 fill-current text-cyan group-hover:scale-110 transition-transform"></i>
-                        <div class="text-left leading-none">
-                            <span class="block text-[10px] uppercase text-cyan/70 tracking-wider">Get it on</span>
-                            <span class="block text-sm font-semibold">Google Play</span>
-                        </div>
-                    </a>
-
-                    <button disabled class="cursor-not-allowed opacity-80 flex items-center justify-center gap-3 px-6 py-4 bg-white/5 border border-white/10 rounded-xl text-gray-300 font-medium transition-all hover:border-white/20 group">
-                        <i data-lucide="apple" class="w-5 h-5 fill-current text-white group-hover:scale-110 transition-transform"></i>
-                        <div class="text-left leading-none">
-                            <span class="block text-[10px] uppercase text-gray-500 tracking-wider">Coming Soon</span>
-                            <span class="block text-sm font-semibold">App Store</span>
-                        </div>
-                    </button>
-                </div>
-
-                <!-- NOW LIVE SECTION -->
-                <div class="mt-8 relative max-w-xl mx-auto lg:mx-0">
-                    <div class="glass-card border border-green-500/30 p-6 rounded-2xl relative overflow-hidden bg-gradient-to-br from-green-900/20 via-[#2A1832]/60 to-cyan-900/20">
-                        <div class="absolute top-0 right-0 p-2 opacity-20">
-                            <i data-lucide="party-popper" class="w-16 h-16 text-green-400"></i>
-                        </div>
-                        
-                        <h3 class="text-xl font-bold mb-2 flex items-center gap-2">
-                            <span class="text-green-400">🎉 Now Live on Google Play! 🎉</span>
-                        </h3>
-                        
-                        <p class="text-cyan font-bold text-sm mb-3 uppercase tracking-wide">
-                            Recovery & Renewal v1.0.3 - Available Now
-                        </p>
-
-                        <p class="text-gray-200 text-sm mb-4 leading-relaxed">
-                            After months of development and testing with our amazing Pioneer Team, Recovery & Renewal is officially available to everyone.
-                        </p>
-                        
-                        <div class="space-y-2 mb-2 text-sm text-gray-300">
-                            <p class="font-semibold text-white border-b border-white/10 pb-1 mb-2">✨ What's included in v1.0.3:</p>
-                            <div class="flex items-start gap-2">
-                                <i data-lucide="book-open" class="w-4 h-4 text-cyan mt-0.5"></i>
-                                <span>Daily devotionals from Spurgeon & A.B. Simpson</span>
-                            </div>
-                            <div class="flex items-start gap-2">
-                                <i data-lucide="book" class="w-4 h-4 text-yellow-300 mt-0.5"></i>
-                                <span>Private journal with multiple daily entries</span>
-                            </div>
-                            <div class="flex items-start gap-2">
-                                <i data-lucide="clipboard-list" class="w-4 h-4 text-pink mt-0.5"></i>
-                                <span>Interactive 12-Step worksheets</span>
-                            </div>
-                            <div class="flex items-start gap-2">
-                                <i data-lucide="search" class="w-4 h-4 text-purple-400 mt-0.5"></i>
-                                <span>Enhanced Bible search</span>
-                            </div>
-                            <div class="flex items-start gap-2">
-                                <i data-lucide="bible" class="w-4 h-4 text-cyan mt-0.5"></i>
-                                <span>Complete KJV Bible, offline & searchable</span>
-                            </div>
-                            <div class="flex items-start gap-2">
-                                <i data-lucide="calendar" class="w-4 h-4 text-green-400 mt-0.5"></i>
-                                <span>Sobriety milestone counter (optional)</span>
-                            </div>
-                            <div class="flex items-start gap-2">
-                                <i data-lucide="shield-check" class="w-4 h-4 text-pink mt-0.5"></i>
-                                <span>Zero tracking. Zero ads. 100% free.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END NOW LIVE SECTION -->
-
-                <!-- MEET THE DEVELOPER & GITHUB BLOCKS -->
-                <div class="mt-8 flex flex-col gap-4 max-w-xl mx-auto lg:mx-0">
-                    <!-- Developer Block -->
-                    <a href="/about.html" class="glass-panel border border-white/10 p-5 rounded-2xl hover:border-cyan/40 transition-all group flex items-center justify-between">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-gradient-to-br from-cyan-900/50 to-blue-900/50 p-3 rounded-xl border border-white/5">
-                                <i data-lucide="user-circle" class="w-8 h-8 text-cyan"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-white group-hover:text-cyan transition-colors">Meet The Developer</h3>
-                                <p class="text-sm text-gray-400">See the story behind the mission</p>
-                            </div>
-                        </div>
-                        <i data-lucide="arrow-right" class="w-5 h-5 text-gray-500 group-hover:text-cyan group-hover:translate-x-1 transition-all"></i>
-                    </a>
-
-                    <!-- GitHub Block -->
-                    <a href="https://github.com/recoveryandrenewal/recovery-renewal-app" target="_blank" class="glass-panel border border-white/10 p-5 rounded-2xl hover:border-purple-500/40 transition-all group flex items-center justify-between">
-                        <div class="flex items-center gap-4">
-                            <div class="bg-gradient-to-br from-purple-900/50 to-pink-900/50 p-3 rounded-xl border border-white/5">
-                                <i data-lucide="github" class="w-8 h-8 text-purple-400"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-white group-hover:text-purple-400 transition-colors">View Source Code on Github</h3>
-                                <p class="text-sm text-gray-400">100% Open Source & Transparent</p>
-                            </div>
-                        </div>
-                        <i data-lucide="external-link" class="w-5 h-5 text-gray-500 group-hover:text-purple-400 group-hover:translate-x-1 transition-all"></i>
-                    </a>
-                </div>
-                <!-- END BLOCKS -->
-
-                <p class="text-xs text-gray-500 font-mono pt-4">
-                    Open Source (MIT) • Offline First • Built in Maine
+                <p class="text-gray-300 text-lg font-light">
+                    Privacy-first. Offline-first. <br>
+                    <span class="text-cyan">Always Free.</span>
                 </p>
             </div>
 
-            <!-- SIMPLIFIED STATIC IMAGE PREVIEW -->
-            <div class="relative flex justify-center lg:justify-end mt-12 lg:mt-0">
-                <div class="relative w-[300px] rounded-3xl overflow-hidden border border-white/10 shadow-2xl hover:scale-105 transition-transform duration-500">
-                    <!-- The Image -->
-                    <img src="listing.jpg" alt="Recovery & Renewal Live on Play Store" class="w-full h-auto object-cover">
+            <!-- Download Card -->
+            <a href="https://play.google.com/store/apps/details?id=com.anonymous.RecoveryAndRenewal" target="_blank" class="block group">
+                <div class="glass-panel p-6 rounded-2xl border border-cyan/30 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-40 transition-opacity">
+                        <i data-lucide="smartphone" class="w-24 h-24 text-cyan"></i>
+                    </div>
                     
-                    <!-- Subtle overlay gradient at bottom for depth -->
-                    <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#121024] to-transparent pointer-events-none"></div>
+                    <h2 class="text-xl font-bold mb-1">Get the App</h2>
+                    <p class="text-sm text-gray-300 mb-4">Version 1.0.3 • Live on Google Play</p>
+                    
+                    <div class="flex items-center gap-3 bg-white/10 p-3 rounded-xl w-fit group-hover:bg-white/20 transition-colors">
+                        <i data-lucide="play" class="w-5 h-5 fill-current text-cyan"></i>
+                        <span class="font-semibold text-sm">Download Now</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Features Grid (Bento) -->
+            <div class="grid grid-cols-2 gap-4">
+                <!-- Feature 1 -->
+                <div class="glass-card p-4 rounded-xl flex flex-col items-center text-center gap-2">
+                    <i data-lucide="shield-check" class="w-8 h-8 text-green-400"></i>
+                    <span class="font-bold text-sm">Private</span>
+                    <span class="text-xs text-gray-400">No Tracking</span>
+                </div>
+                <!-- Feature 2 -->
+                <div class="glass-card p-4 rounded-xl flex flex-col items-center text-center gap-2">
+                    <i data-lucide="wifi-off" class="w-8 h-8 text-purple-400"></i>
+                    <span class="font-bold text-sm">Offline</span>
+                    <span class="text-xs text-gray-400">Works Anywhere</span>
+                </div>
+                <!-- Feature 3 -->
+                <div class="glass-card p-4 rounded-xl flex flex-col items-center text-center gap-2">
+                    <i data-lucide="book-open" class="w-8 h-8 text-pink"></i>
+                    <span class="font-bold text-sm">Devotional</span>
+                    <span class="text-xs text-gray-400">Daily Wisdom</span>
+                </div>
+                <!-- Feature 4 -->
+                <div class="glass-card p-4 rounded-xl flex flex-col items-center text-center gap-2">
+                    <i data-lucide="dollar-sign" class="w-8 h-8 text-cyan"></i>
+                    <span class="font-bold text-sm">Free</span>
+                    <span class="text-xs text-gray-400">Forever</span>
                 </div>
             </div>
-            <!-- END PREVIEW -->
-        </div>
 
-        <!-- SEE IT IN ACTION GALLERY SECTION -->
-        <div class="w-full max-w-6xl mt-24">
-            <div class="glass-card border border-pink/20 p-8 md:p-12 rounded-3xl relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#EC4899] to-transparent opacity-50"></div>
-                
-                <div class="text-center mb-12">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-4">
-                        See It In <span class="text-cyan">Action</span>
-                    </h2>
-                    <p class="text-lg text-gray-300 max-w-2xl mx-auto">
-                        Real screenshots from the app. <span class="text-pink">Cosmic design.</span> <span class="text-cyan">Privacy-first.</span> <span class="text-white">Zero tracking.</span>
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-                    <div class="screenshot-preview rounded-xl overflow-hidden border border-white/10 shadow-lg">
-                        <img src="https://raw.githubusercontent.com/recoveryandrenewal/recovery-renewal-site/main/images/homescreen.jpg" alt="Home Screen" class="w-full h-auto">
-                    </div>
-                    <div class="screenshot-preview rounded-xl overflow-hidden border border-white/10 shadow-lg">
-                        <img src="https://raw.githubusercontent.com/recoveryandrenewal/recovery-renewal-site/main/images/spurgeon.jpg" alt="Spurgeon Devotional" class="w-full h-auto">
-                    </div>
-                    <div class="screenshot-preview rounded-xl overflow-hidden border border-white/10 shadow-lg">
-                        <img src="https://raw.githubusercontent.com/recoveryandrenewal/recovery-renewal-site/main/images/stoic-reading.jpg" alt="Stoic Wisdom" class="w-full h-auto">
-                    </div>
-                    <div class="screenshot-preview rounded-xl overflow-hidden border border-white/10 shadow-lg">
-                        <img src="https://raw.githubusercontent.com/recoveryandrenewal/recovery-renewal-site/main/images/resources.jpg" alt="Crisis Resources" class="w-full h-auto">
-                    </div>
-                </div>
-
-                <div class="text-center">
-                    <a href="/gallery.html" class="inline-flex items-center gap-3 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-pink-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold transition-all shadow-lg hover:shadow-2xl">
-                        <i data-lucide="images" class="w-5 h-5"></i>
-                        View Full Gallery
-                        <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <!-- END GALLERY SECTION -->
-
-        <div id="manifesto" class="w-full max-w-3xl mt-24 glass-panel rounded-2xl p-8 md:p-12 text-center relative overflow-hidden">
-            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#EC4899] to-transparent opacity-50"></div>
-            <h2 class="text-2xl md:text-3xl font-bold mb-2">This app collects <span class="text-pink">NOTHING.</span></h2>
-            <p class="text-lg text-gray-300 mb-6">No data. No metadata. No tracking.</p>
-            <div class="space-y-4 text-gray-400 leading-relaxed max-w-2xl mx-auto">
-                <p>Everything stays on <span class="text-cyan font-bold">YOUR device.</span></p>
-                <p>What you see here, what you read here, stays here. All content is local and free.</p>
-                <p class="text-sm italic opacity-80 pt-4">
-                    "We're not here to profit from your journey. We're here because recovery matters."
+            <!-- "Did You Know?" Section -->
+            <div class="glass-card p-6 rounded-2xl border border-white/10">
+                <h3 class="font-bold text-lg mb-2 flex items-center gap-2">
+                    <i data-lucide="sparkles" class="w-5 h-5 text-yellow-400"></i> Your Path
+                </h3>
+                <p class="text-sm text-gray-300 leading-relaxed">
+                    You can customize R&R to fit your journey. Toggle "Devotional Mode" for scripture, or "Recovery Mode" for secular wisdom. It adapts to you.
                 </p>
             </div>
+
         </div>
+    </div>
 
-        <!-- YOUR PATH / DUALITY SECTION -->
-        <div id="your-way" class="w-full max-w-6xl mt-16">
-            <div class="glass-card border border-cyan/20 p-8 md:p-12 rounded-3xl relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#00E5FF] to-transparent opacity-50"></div>
 
-                <div class="text-center mb-10">
-                    <h2 class="text-4xl md:text-5xl font-bold mb-4">
-                        Your Path, <span class="text-pink">Your Way</span>
-                    </h2>
-                    <p class="text-lg text-gray-300 max-w-2xl mx-auto">
-                        Recovery & Renewal can become the app you need in seconds.
-                        Flip a few Settings toggles to keep what helps and turn off what doesn’t.
-                    </p>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-6">
-                    <!-- Devotional Mode -->
-                    <div class="glass-panel rounded-2xl p-6 md:p-8 border border-white/10 relative overflow-hidden">
-                        <div class="absolute -top-10 -right-10 opacity-10">
-                            <i data-lucide="book-open" class="w-40 h-40 text-cyan"></i>
-                        </div>
-
-                        <div class="flex items-center gap-3 mb-4">
-                            <i data-lucide="sparkles" class="w-6 h-6 text-cyan"></i>
-                            <h3 class="text-xl font-bold text-white">Devotional Mode</h3>
-                        </div>
-
-                        <p class="text-gray-300 mb-4">
-                            Want a focused devotional + Bible companion? Turn off extra streams and stay centered.
-                        </p>
-
-                        <div class="space-y-2 text-sm text-gray-400">
-                            <div class="flex items-start gap-2">
-                                <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan mt-0.5"></i>
-                                <span>Keep Bible + devotionals front and center.</span>
-                            </div>
-                            <div class="flex items-start gap-2">
-                                <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan mt-0.5"></i>
-                                <span>Set your milestone to something like “Living in Christ.”</span>
-                            </div>
-                            <div class="flex items-start gap-2">
-                                <i data-lucide="check-circle-2" class="w-4 h-4 text-cyan mt-0.5"></i>
-                                <span>Simple, calm, and distraction-free.</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Recovery Mode -->
-                    <div class="glass-panel rounded-2xl p-6 md:p-8 border border-white/10 relative overflow-hidden">
-                        <div class="absolute -top-10 -right-10 opacity-10">
-                            <i data-lucide="life-buoy" class="w-40 h-40 text-pink"></i>
-                        </div>
-
-                        <div class="flex items-center gap-3 mb-4">
-                            <i data-lucide="heart-handshake" class="w-6 h-6 text-pink"></i>
-                            <h3 class="text-xl font-bold text-white">Recovery Mode</h3>
-                        </div>
-
-                        <p class="text-gray-300 mb-4">
-                            Not into Bible devotionals? No problem. Turn off what isn’t for you and keep the support.
-                        </p>
-
-                        <div class="space-y-2 text-sm text-gray-400">
-                            <div class="flex items-start gap-2">
-                                <i data-lucide="check-circle-2" class="w-4 h-4 text-pink mt-0.5"></i>
-                                <span>Disable devotionals and keep recovery/spiritual readings.</span>
-                            </div>
-                            <div class="flex items-start gap-2">
-                                <i data-lucide="check-circle-2" class="w-4 h-4 text-pink mt-0.5"></i>
-                                <span>Use wisdom streams that match your beliefs.</span>
-                            </div>
-                            <div class="flex items-start gap-2">
-                                <i data-lucide="check-circle-2" class="w-4 h-4 text-pink mt-0.5"></i>
-                                <span>Still private. Still offline. Still free.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="text-center mt-10">
-                    <p class="text-sm text-gray-400">
-                        No accounts. No tracking. No pressure. Just the support you choose.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <!-- END YOUR PATH / DUALITY SECTION -->
-
-    </main>
-
-    <footer class="w-full border-t border-white/10 bg-[#0F0F1B]/80 backdrop-blur-md py-8 mt-auto">
-        <div class="max-w-6xl mx-auto px-6 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
+    <!-- ==============================================
+         TAB 2: GALLERY (Visual Showcase)
+         ============================================== -->
+    <div id="tab-gallery" class="tab-content px-4">
+        <div class="max-w-xl mx-auto space-y-6 pt-8 md:pt-0">
             
-            <div class="text-sm text-gray-500">
-                <p>&copy; 2025 Recovery & Renewal.</p>
-                <p class="mt-1">Contact: <a href="mailto:recoveryandrenewal@protonmail.com" class="text-cyan hover:underline">recoveryandrenewal@protonmail.com</a></p>
+            <div class="text-center mb-6">
+                <h2 class="text-3xl font-bold">App <span class="text-cyan">Gallery</span></h2>
+                <p class="text-gray-400 text-sm mt-2">A peek inside the cosmic interface.</p>
             </div>
 
-            <div class="flex items-center gap-4 text-sm flex-wrap justify-center md:justify-start">
-                <a href="/privacy.html" class="text-cyan hover:text-white transition-colors">Privacy</a>
-                <span class="text-gray-700">•</span>
-                <a href="/about.html" class="text-cyan hover:text-white transition-colors">About</a>
-                <span class="text-gray-700">•</span>
-                <a href="/credits.html" class="text-cyan hover:text-white transition-colors">Credits</a>
-                <span class="text-gray-700">•</span>
-                <a href="/community.html" class="text-cyan hover:text-white transition-colors">Thanks</a>
-                <span class="text-gray-700">•</span>
-                <a href="https://github.com/recoveryandrenewal" target="_blank" class="text-cyan hover:text-white transition-colors flex items-center gap-2">
-                    <i data-lucide="github" class="w-4 h-4"></i> GitHub
-                </a>
-                <span class="text-gray-700">•</span>
-                <a href="https://www.facebook.com/profile.php?id=61585437281661" target="_blank" class="text-cyan hover:text-white transition-colors flex items-center gap-2">
-                    <i data-lucide="facebook" class="w-4 h-4"></i> Facebook
-                </a>
-                <span class="text-gray-700">•</span>
-                <a href="https://ko-fi.com/recoveryandrenewal" target="_blank" class="text-cyan hover:text-white transition-colors flex items-center gap-2">
-                    <i data-lucide="coffee" class="w-4 h-4"></i> Support
-                </a>
+            <!-- Gallery Vertical Stack -->
+            <div class="space-y-6">
+                <!-- Img 1 -->
+                <div class="glass-panel p-2 rounded-2xl">
+                    <img src="https://raw.githubusercontent.com/recoveryandrenewal/recovery-renewal-site/main/images/homescreen.jpg" class="w-full rounded-xl" alt="Home Screen">
+                    <div class="p-3">
+                        <h3 class="font-bold text-white">Your Daily Hub</h3>
+                        <p class="text-xs text-gray-400">Sobriety counter, daily wisdom, and quick access.</p>
+                    </div>
+                </div>
+
+                <!-- Img 2 -->
+                <div class="glass-panel p-2 rounded-2xl">
+                    <img src="https://raw.githubusercontent.com/recoveryandrenewal/recovery-renewal-site/main/images/spurgeon.jpg" class="w-full rounded-xl" alt="Devotional">
+                    <div class="p-3">
+                        <h3 class="font-bold text-white">Daily Devotionals</h3>
+                        <p class="text-xs text-gray-400">Morning & Evening readings from C.H. Spurgeon.</p>
+                    </div>
+                </div>
+
+                <!-- Img 3 -->
+                <div class="glass-panel p-2 rounded-2xl">
+                    <img src="https://raw.githubusercontent.com/recoveryandrenewal/recovery-renewal-site/main/images/stoic-reading.jpg" class="w-full rounded-xl" alt="Stoic">
+                    <div class="p-3">
+                        <h3 class="font-bold text-white">Ancient Wisdom</h3>
+                        <p class="text-xs text-gray-400">Stoic philosophy and Eastern traditions.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center pb-8">
+                <a href="/gallery.html" class="text-sm text-cyan hover:underline">View Full Web Gallery -></a>
             </div>
         </div>
-    </footer>
+    </div>
 
+
+    <!-- ==============================================
+         TAB 3: CONNECT (Social, GitHub, Legal)
+         ============================================== -->
+    <div id="tab-connect" class="tab-content px-4">
+        <div class="max-w-xl mx-auto space-y-6 pt-8 md:pt-0">
+
+            <div class="text-center mb-2">
+                <h2 class="text-3xl font-bold">Connect</h2>
+                <p class="text-gray-400 text-sm mt-2">Join the journey.</p>
+            </div>
+
+            <!-- Developer Profile Card -->
+            <a href="/about.html" class="block glass-panel p-5 rounded-2xl border border-cyan/20 flex items-center gap-4 hover:bg-white/5 transition-colors">
+                <div class="w-14 h-14 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-xl font-bold">
+                    WR
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg">Meet The Developer</h3>
+                    <p class="text-sm text-gray-300">Read the story behind the mission.</p>
+                </div>
+                <i data-lucide="chevron-right" class="ml-auto text-gray-500 w-5 h-5"></i>
+            </a>
+
+            <!-- Bento Grid Links -->
+            <div class="grid grid-cols-2 gap-4">
+                
+                <!-- GitHub -->
+                <a href="https://github.com/recoveryandrenewal/recovery-renewal-app" target="_blank" class="glass-card p-5 rounded-2xl flex flex-col justify-between h-32 hover:bg-white/5 border-l-4 border-l-purple-500">
+                    <i data-lucide="github" class="w-8 h-8 text-purple-400"></i>
+                    <div>
+                        <span class="block font-bold">GitHub</span>
+                        <span class="text-xs text-gray-400">Source Code</span>
+                    </div>
+                </a>
+
+                <!-- Support -->
+                <a href="https://ko-fi.com/recoveryandrenewal" target="_blank" class="glass-card p-5 rounded-2xl flex flex-col justify-between h-32 hover:bg-white/5 border-l-4 border-l-pink-500">
+                    <i data-lucide="coffee" class="w-8 h-8 text-pink"></i>
+                    <div>
+                        <span class="block font-bold">Support</span>
+                        <span class="text-xs text-gray-400">Donate via Ko-fi</span>
+                    </div>
+                </a>
+
+                <!-- Facebook -->
+                <a href="https://www.facebook.com/profile.php?id=61585437281661" target="_blank" class="glass-card p-5 rounded-2xl flex flex-col justify-between h-32 hover:bg-white/5 border-l-4 border-l-blue-500">
+                    <i data-lucide="facebook" class="w-8 h-8 text-blue-400"></i>
+                    <div>
+                        <span class="block font-bold">Facebook</span>
+                        <span class="text-xs text-gray-400">Community</span>
+                    </div>
+                </a>
+
+                <!-- YouTube (Coming Soon) -->
+                <div class="glass-card p-5 rounded-2xl flex flex-col justify-between h-32 bg-black/20 opacity-70">
+                    <i data-lucide="youtube" class="w-8 h-8 text-red-500"></i>
+                    <div>
+                        <span class="block font-bold text-gray-400">YouTube</span>
+                        <span class="text-[10px] uppercase bg-white/10 px-2 py-0.5 rounded text-gray-400 w-fit">Coming Soon</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Legal / Info List -->
+            <div class="glass-panel rounded-2xl overflow-hidden divide-y divide-white/5">
+                <a href="/credits.html" class="flex items-center justify-between p-4 hover:bg-white/5">
+                    <span class="text-sm font-medium">Credits & Sources</span>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-500"></i>
+                </a>
+                <a href="/community.html" class="flex items-center justify-between p-4 hover:bg-white/5">
+                    <span class="text-sm font-medium">Community Thanks</span>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-500"></i>
+                </a>
+                <a href="/privacy.html" class="flex items-center justify-between p-4 hover:bg-white/5">
+                    <span class="text-sm font-medium">Privacy Policy</span>
+                    <i data-lucide="chevron-right" class="w-4 h-4 text-gray-500"></i>
+                </a>
+            </div>
+
+            <p class="text-center text-xs text-gray-600 pt-4">
+                &copy; 2025 Recovery & Renewal. MIT License.
+            </p>
+
+        </div>
+    </div>
+
+
+    <!-- ==============================================
+         MOBILE BOTTOM NAVIGATION (Visible on Mobile)
+         ============================================== -->
+    <div class="md:hidden fixed bottom-0 left-0 w-full bg-[#121024]/90 backdrop-blur-xl border-t border-white/10 z-50 pb-safe">
+        <div class="flex justify-around items-center h-20 px-2 pb-2">
+            
+            <button onclick="switchTab('home')" class="nav-btn active flex flex-col items-center gap-1 p-2 w-20 text-gray-500 transition-colors">
+                <i data-lucide="home" class="w-6 h-6"></i>
+                <span class="text-[10px] font-medium">Home</span>
+            </button>
+
+            <button onclick="switchTab('gallery')" class="nav-btn flex flex-col items-center gap-1 p-2 w-20 text-gray-500 transition-colors">
+                <i data-lucide="images" class="w-6 h-6"></i>
+                <span class="text-[10px] font-medium">Gallery</span>
+            </button>
+
+            <button onclick="switchTab('connect')" class="nav-btn flex flex-col items-center gap-1 p-2 w-20 text-gray-500 transition-colors">
+                <i data-lucide="user" class="w-6 h-6"></i>
+                <span class="text-[10px] font-medium">Connect</span>
+            </button>
+
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
     <script>
+        // Initialize Icons
         lucide.createIcons();
+
+        // Tab Switching Logic
+        function switchTab(tabName) {
+            // 1. Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(el => {
+                el.classList.remove('active');
+            });
+
+            // 2. Show active tab
+            const activeTab = document.getElementById('tab-' + tabName);
+            if(activeTab) activeTab.classList.add('active');
+
+            // 3. Reset scroll position of new tab
+            if(activeTab) activeTab.scrollTop = 0;
+
+            // 4. Update Bottom Nav Icons (Mobile)
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('active');
+                // Simple check if button text matches tab name
+                if(btn.innerText.toLowerCase().includes(tabName)) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // 5. Update URL hash without scrolling (optional, keeps state)
+            // history.replaceState(null, null, '#' + tabName);
+        }
     </script>
+
 </body>
 </html>
