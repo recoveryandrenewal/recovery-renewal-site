@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Recovery & Renewal</title>
-    <meta name="description" content="The story behind Recovery & Renewal. Built by a homeless veteran in recovery to provide free tools for the community.">
+    <meta name="description" content="The story behind Recovery & Renewal. Built by a veteran in recovery to provide free tools for the community.">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -15,7 +15,12 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
-        /* --- THEME COLORS --- */
+        /* --- THEME COLORS --- 
+           Cosmic Deep: #121024, #2A1832, #151525
+           Accent Cyan: #00E5FF
+           Accent Pink: #EC4899
+        */
+
         body {
             font-family: 'Inter', sans-serif;
             background-color: #121024;
@@ -134,14 +139,16 @@
 
     <!-- Navigation -->
     <nav class="w-full py-6 z-10">
-        <div class="max-w-4xl mx-auto px-6 flex justify-between items-center">
+        <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
             <a href="/" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
                 <i data-lucide="heart" class="text-pink w-6 h-6 fill-pink/20"></i>
                 <span class="font-bold text-xl tracking-tight text-white">R&R</span>
             </a>
-            <a href="/" class="flex items-center gap-2 text-sm font-medium text-gray-400 hover:text-cyan transition-colors">
-                <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Home
-            </a>
+            <div class="flex items-center gap-6 text-sm font-medium text-gray-300">
+                <a href="/" class="hover:text-cyan transition-colors">Home</a>
+                <a href="/gallery.html" class="hover:text-cyan transition-colors">Gallery</a>
+                <a href="https://ko-fi.com/recoveryandrenewal" target="_blank" class="px-4 py-2 rounded-full border border-cyan/30 text-cyan hover:bg-cyan/10 transition-all">Support</a>
+            </div>
         </div>
     </nav>
 
@@ -167,7 +174,7 @@
                         <p class="text-gray-400">One veteran, one laptop, one mission.</p>
 
                         <div class="prose prose-invert text-gray-300 leading-relaxed mt-4 max-w-xl">
-                            <p>Bill is a homeless U.S. Navy veteran with an A.A.S. in Information Technology and a person in active recovery from alcoholism. He currently lives in a Christian men's shelter in Lewiston, Maine, where he volunteers in the kitchen and attends Unity Bible Church.</p>
+                            <p>Bill is a U.S. Navy veteran with an A.A.S. in Information Technology and a person in active recovery from alcoholism. He currently lives in a Christian men's shelter in Lewiston, Maine—where he volunteered in the kitchen from November 2025 to August 2026—and attends Unity Bible Church. Today, he also works as a Resident Assistant at the Travas Collins House, a 6-month residential treatment facility operated by Recovery Connections of Maine (RCOM).</p>
                             <p class="mt-4">Despite a felony conviction in 2014 that kept him out of the IT industry, he single-handedly designed and developed Recovery & Renewal on a refurbished $200 HP laptop with the help of AI tools. He hopes to continue rebuilding his life as an independent developer.</p>
                         </div>
                     </div>
@@ -261,7 +268,6 @@
                     </a>
                 </div>
             </div>
-
         </div>
     </main>
 
